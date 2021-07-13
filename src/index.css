@@ -1,0 +1,23 @@
+.reproductor,
+.reproductor2 {
+  display: none;
+}
+.header {
+  background-color: aquamarine;
+}
+.footer {
+  position: absolute;
+  top: 90%;
+}
+.section {
+  background-color: darkkhaki;
+}
+
+.barraDeReproduccion {
+  background-color: rgb(169, 124, 253);
+  position: absolute;
+  top: 80%;
+}
+.todoRojo {
+  background-color: red;
+}
