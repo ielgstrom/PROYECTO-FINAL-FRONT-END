@@ -1,12 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+// import Grid from "@material-ui/core/Grid";
+// import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
-import VolumeDown from "@material-ui/icons/VolumeDown";
-import VolumeUp from "@material-ui/icons/VolumeUp";
-import Container from "@material-ui/core/Container";
-import ReactPlayer from "react-player";
+// import VolumeDown from "@material-ui/icons/VolumeDown";
+// import VolumeUp from "@material-ui/icons/VolumeUp";
+// import Container from "@material-ui/core/Container";
+// import ReactPlayer from "react-player";
 
 export const Reproductor = () => {
   const useStyles = makeStyles({
@@ -25,8 +25,8 @@ export const Reproductor = () => {
         />
       </Container> */}
 
-        <div className="row">
-          <div className="col-2"></div>
+        <div className="row align-items-center">
+          <div className="col-2">Aqui van los Botones</div>
           <div className="col-8 sliderMusica">
             <Slider
               aria-labelledby="continuous-slider"

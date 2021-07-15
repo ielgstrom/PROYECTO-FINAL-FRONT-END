@@ -3,7 +3,7 @@ import React from "react";
 
 import { PagPrincipal } from "./componentes/PagPrincipal";
 function App() {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(true);
   const cambiar = () => {
     setLogin(!login);
   };

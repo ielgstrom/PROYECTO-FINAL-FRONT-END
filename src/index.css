@@ -5,10 +5,7 @@
 .header {
   background-color: aquamarine;
 }
-.footer {
-  position: absolute;
-  top: 90%;
-}
+
 .section {
   background-color: darkkhaki;
 }
@@ -20,4 +17,25 @@
 }
 .todoRojo {
   background-color: red;
+}
+
+.listaCanciones,
+.ListaAmigos {
+  flex: 1 1 0;
+  height: 90vh;
+}
+
+.Main {
+  flex: 4 1 0;
+  height: 90vh;
+}
+
+.Botones {
+  flex: 2 1 0;
+}
+.SliderMusica {
+  flex: 5 1 0;
+}
+volumenSlider {
+  flex: 1 1 0;
 }

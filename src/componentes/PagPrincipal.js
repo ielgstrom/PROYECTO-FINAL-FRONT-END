@@ -5,22 +5,22 @@ export const PagPrincipal = () => {
   return (
     <>
       <div className="d-flex flex-column ">
-        <div className="d-flex  align-items-stretch ">
-          <p className="col-2 section">
+        <div className="d-flex  align-items-stretch paginaPrincipal">
+          <p className=" section listaCanciones">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
             earum ab soluta velit cupiditate dolores aut quibusdam
             exercitationem reprehenderit nostrum excepturi, aperiam minus
             voluptates rem repellat omnis ipsum non aspernatur.
           </p>
 
-          <p className="col-8 header">
+          <p className="header Main">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
             earum ab soluta velit cupiditate dolores aut quibusdam
             exercitationem reprehenderit nostrum excepturi, aperiam minus
             voluptates rem repellat omnis ipsum non aspernatur.
           </p>
 
-          <p className="col-2 section ">
+          <p className="section ListaAmigos">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
             earum ab soluta velit cupiditate dolores aut quibusdam
             exercitationem reprehenderit nostrum excepturi, aperiam minus
@@ -28,7 +28,7 @@ export const PagPrincipal = () => {
           </p>
         </div>
 
-        <Reproductor className="footer" />
+        <Reproductor />
       </div>
     </>
   );
