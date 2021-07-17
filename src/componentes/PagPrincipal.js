@@ -19,7 +19,6 @@ export const PagPrincipal = () => {
             exercitationem reprehenderit nostrum excepturi, aperiam minus
             voluptates rem repellat omnis ipsum non aspernatur.
           </p>
-
           <p className="section ListaAmigos">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
             earum ab soluta velit cupiditate dolores aut quibusdam
