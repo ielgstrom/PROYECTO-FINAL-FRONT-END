@@ -42,11 +42,11 @@
 .botonBack,
 .botonPlay,
 .botonNext {
-  size: 2.5rem;
-  font-size: large;
+  size: 100px;
+  font-size: larger;
 }
 
-@media (min-width: 576) {
+@media (max-width: 575px) {
   .volumen {
     display: none;
   }
