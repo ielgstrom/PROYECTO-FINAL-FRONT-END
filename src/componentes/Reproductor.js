@@ -17,6 +17,7 @@ export const Reproductor = () => {
 
   return (
     <>
+    
       <div className="container footer">
         {/* <Container maxWidth="md" className="reproductor">
         <ReactPlayer
