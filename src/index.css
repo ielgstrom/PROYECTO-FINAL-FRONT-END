@@ -4,10 +4,12 @@
 }
 .header {
   background-color: aquamarine;
+  margin-bottom: 0;
 }
 
 .section {
   background-color: darkkhaki;
+  margin-bottom: 0;
 }
 
 .barraDeReproduccion {
@@ -22,20 +24,30 @@
 .listaCanciones,
 .ListaAmigos {
   flex: 1 1 0;
-  height: 90vh;
+  height: 88vh;
 }
 
 .Main {
   flex: 4 1 0;
-  height: 90vh;
+  height: 88vh;
 }
 
-.Botones {
-  flex: 2 1 0;
+.barraReproduccion {
+  height: 12vh;
+  margin: 0;
+  background-color: #8888ce;
+  box-shadow: 0px -2px 3px rgba(0, 0, 0, 0.322);
 }
-.SliderMusica {
-  flex: 5 1 0;
+
+.botonBack,
+.botonPlay,
+.botonNext {
+  size: 2.5rem;
+  font-size: large;
 }
-volumenSlider {
-  flex: 1 1 0;
+
+@media (min-width: 576) {
+  .volumen {
+    display: none;
+  }
 }
