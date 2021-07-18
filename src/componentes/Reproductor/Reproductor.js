@@ -23,13 +23,22 @@ const useStyles = makeStyles((theme) => ({
     width: 100,
   },
 }));
+const format = (seconds) => {
+  if (isNaN(seconds)) {
+    return "00:00";
+  }
+  const date = new Date(seconds * 1000);
+  const mm = date.getUTCMinutes();
+  const ss = date.getUTCSeconds().toString().padStart(2, "0");
 
+  return `${mm}:${ss}`;
+};
 export const Reproductor = () => {
   const classes = useStyles();
   const [reproduccion, setReproduccion] = useState({
     reproduciendo: true,
     played: 0,
-    muted: true,
+    muted: false,
     volume: 0.5,
     seeking: false,
   });
@@ -81,16 +90,25 @@ export const Reproductor = () => {
   };
 
   const handleSeekMouseUp = (e, newValue) => {
-    console.log(newValue);
     setReproduccion({ ...reproduccion, seeking: false });
     playerRef.current.seekTo(newValue / 100);
   };
+
+  const currentTime = playerRef.current
+    ? playerRef.current.getCurrentTime()
+    : "00:00";
+  const duration = playerRef.current
+    ? playerRef.current.getDuration()
+    : "00:00";
+
+  const elapsedTime = format(currentTime);
+  const totalDuration = format(duration);
   return (
     <>
       <div maxwidth="md" className="reproductor">
         <ReactPlayer
           ref={playerRef}
-          url="https://soundcloud.com/kingprincessmusic/pain"
+          url="https://soundcloud.com/fiorinien/kate-bush-running-up-that-hill"
           className="reproductor2"
           muted={muted}
           playing={reproduciendo}
@@ -112,6 +130,8 @@ export const Reproductor = () => {
         volume={volume}
         playing={reproduccion}
         played={played}
+        elapsedTime={elapsedTime}
+        totalDuration={totalDuration}
       />
     </>
   );
