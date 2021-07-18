@@ -27,9 +27,6 @@
   position: absolute;
   top: 80%;
 }
-.todoRojo {
-  background-color: red;
-}
 
 .listaCanciones,
 .ListaAmigos {
@@ -74,6 +71,18 @@
   padding-left: 2px;
   padding-right: 2px;
 }
+
+.nombreCancion {
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  color: var(--azulprincipal);
+}
+.Artista {
+  font-size: medium;
+  text-align: center;
+  color: var(--azulprincipal);
+}
 @media (max-width: 575px) {
   .volumen {
     display: none;
@@ -86,6 +95,13 @@
   .barraReproduccion {
     height: 18vh;
   }
+}
+
+.buscadorMusica {
+  margin-top: 5%;
+  margin-left: 4%;
+  margin-right: 5%;
+  border-radius: 10px;
 }
 .contenedorMatches {
   width: 300px;

@@ -41,8 +41,9 @@ export const Reproductor = () => {
     muted: false,
     volume: 0.5,
     seeking: false,
+    liked: true,
   });
-  const { reproduciendo, played, muted, volume } = reproduccion;
+  const { reproduciendo, played, muted, volume, liked } = reproduccion;
 
   const playerRef = useRef(null);
   const [reverseIcon, setReverseIcon] = useState(true);
@@ -64,7 +65,9 @@ export const Reproductor = () => {
   const mutear = () => {
     setReproduccion({ ...reproduccion, muted: !reproduccion.muted });
   };
-
+  const likear = () => {
+    setReproduccion({ ...reproduccion, liked: !reproduccion.liked });
+  };
   const handleVolumeChange = (e, newValue) => {
     setReproduccion({
       ...reproduccion,
@@ -108,7 +111,7 @@ export const Reproductor = () => {
       <div maxwidth="md" className="reproductor">
         <ReactPlayer
           ref={playerRef}
-          url="https://soundcloud.com/fiorinien/kate-bush-running-up-that-hill"
+          url="https://soundcloud.com/theavalanches/interstellar-love-feat-leon"
           className="reproductor2"
           muted={muted}
           playing={reproduciendo}
@@ -132,6 +135,8 @@ export const Reproductor = () => {
         played={played}
         elapsedTime={elapsedTime}
         totalDuration={totalDuration}
+        liked={liked}
+        likear={likear}
       />
     </>
   );

@@ -8,10 +8,14 @@ export const PagPrincipal = () => {
       <div className="d-flex flex-column ">
         <div className="d-flex  align-items-stretch paginaPrincipal">
           <p className=" section listaCanciones">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-            earum ab soluta velit cupiditate dolores aut quibusdam
-            exercitationem reprehenderit nostrum excepturi, aperiam minus
-            voluptates rem repellat omnis ipsum non aspernatur.
+            <form className=" d-flex flex-row">
+              <input
+                type="text"
+                className="form-control form-control-md buscadorMusica"
+                placeholder="Buscar Musica"
+              ></input>
+              <i className="buscadorMusica">B</i>
+            </form>
           </p>
 
           <p className="header Main">{false && <Perfil />}</p>
