@@ -16,6 +16,8 @@ import VolumeUpIcon from "@material-ui/icons/VolumeUp";
 import VolumeDown from "@material-ui/icons/VolumeDown";
 import VolumeMute from "@material-ui/icons/VolumeOff";
 import Popover from "@material-ui/core/Popover";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const useStyles = makeStyles((theme) => ({
   //   button: {
@@ -79,15 +81,31 @@ const Controls = ({
   played,
   elapsedTime,
   totalDuration,
+  liked,
+  likear,
 }) => {
   const classes = useStyles();
   return (
     <div className="container-fluid barraReproduccion">
       <div className="row  justify-content-center align-items-center">
         <div className="col-12 col-sm-2 text-center plainText">
-          Nombre de la cancion-Artista
+          <div className="row nombreCancion">
+            Aquí va el nombre de la canción
+          </div>
+          <div className="row Artista">Aquí va el artista</div>
         </div>
-        <div className="col-8 ">
+        {/* <div className="col-sm-1"> */}
+        {liked ? (
+          <FavoriteBorderIcon
+            className={classes.controlIcons}
+            onClick={likear}
+          />
+        ) : (
+          <FavoriteIcon className={classes.controlIcons} onClick={likear} />
+        )}
+        {/* </div> */}
+
+        <div className="col-7 ">
           <div className="row justify-content-down text-center">
             <div className="col-12 ">
               <SkipPreviousIcon
