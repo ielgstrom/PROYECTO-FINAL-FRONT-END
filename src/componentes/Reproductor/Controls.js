@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   //   margin: theme.spacing(1),
   // },
   controlIcons: {
-    // color: "#777",
+    color: "#007acc",
     fontSize: 40,
     transform: "scale(0.9)",
     "&:hover": {
@@ -82,7 +82,7 @@ const Controls = ({
   return (
     <div className="container-fluid barraReproduccion">
       <div className="row  justify-content-center align-items-center">
-        <div className="col-12 col-sm-2 text-center">
+        <div className="col-12 col-sm-2 text-center plainText">
           Nombre de la cancion-Artista
         </div>
         <div className="col-8 ">
