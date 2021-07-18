@@ -1,7 +1,7 @@
 import React from "react";
 import { Perfil } from "./Perfil";
 
-import { Reproductor } from "./Reproductor";
+import { Reproductor } from "./Reproductor/Reproductor";
 export const PagPrincipal = () => {
   return (
     <>
