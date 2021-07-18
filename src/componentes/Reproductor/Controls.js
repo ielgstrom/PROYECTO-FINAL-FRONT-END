@@ -77,6 +77,8 @@ const Controls = ({
   volume,
   playing,
   played,
+  elapsedTime,
+  totalDuration,
 }) => {
   const classes = useStyles();
   return (
@@ -107,7 +109,10 @@ const Controls = ({
             </div>
           </div>
           <div className="row justify-content-center align-items-center">
-            <div className="col-12 col-sm-8">
+            <small className="col-1 align-self-center tiempoCancion">
+              {elapsedTime}
+            </small>
+            <div className="col-10 col-sm-8 barritaReproductora">
               <PrettoSlider
                 min={0}
                 max={100}
@@ -117,15 +122,16 @@ const Controls = ({
                 onChangeComitted={onSeekMouseUp}
               />
             </div>
+            <small className="col-1 tiempoCancion">{totalDuration}</small>
           </div>
         </div>
         <div className="col-2 volumen">
           <Grid container alignItems="center">
             <IconButton onClick={onMute}>
-              {muted ? (
-                <VolumeOff className={classes.controlIcons} />
-              ) : (
+              {!muted ? (
                 <VolumeUpIcon className={classes.controlIcons} />
+              ) : (
+                <VolumeOff className={classes.controlIcons} />
               )}
             </IconButton>{" "}
             <PrettoSlider
