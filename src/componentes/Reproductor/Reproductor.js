@@ -33,7 +33,7 @@ const format = (seconds) => {
 
   return `${mm}:${ss}`;
 };
-export const Reproductor = () => {
+export const Reproductor = ({ ListaCancionesPrueba }) => {
   const classes = useStyles();
   const [reproduccion, setReproduccion] = useState({
     reproduciendo: true,
@@ -47,7 +47,7 @@ export const Reproductor = () => {
 
   const playerRef = useRef(null);
   const [reverseIcon, setReverseIcon] = useState(true);
-
+  const [cancionPuesta, setCancionPuesta] = useState(ListaCancionesPrueba[0]);
   const reproducirOPausar = () => {
     setReproduccion({
       ...reproduccion,
@@ -97,6 +97,32 @@ export const Reproductor = () => {
     playerRef.current.seekTo(newValue / 100);
   };
 
+  const nextSong = () => {
+    if (
+      ListaCancionesPrueba[ListaCancionesPrueba.length - 1].urlsong2 !==
+      cancionPuesta.urlsong2
+    ) {
+      setCancionPuesta(
+        ListaCancionesPrueba[ListaCancionesPrueba.indexOf(cancionPuesta) + 1]
+      );
+    } else if (
+      ListaCancionesPrueba[ListaCancionesPrueba.length - 1].urlsong2 ===
+      cancionPuesta.urlsong2
+    ) {
+      setCancionPuesta(ListaCancionesPrueba[0]);
+    }
+  };
+
+  const previousSong = () => {
+    if (ListaCancionesPrueba[0].urlsong2 !== cancionPuesta.urlsong2) {
+      setCancionPuesta(
+        ListaCancionesPrueba[ListaCancionesPrueba.indexOf(cancionPuesta) - 1]
+      );
+    } else if (ListaCancionesPrueba[0].urlsong2 === cancionPuesta.urlsong2) {
+      setCancionPuesta(ListaCancionesPrueba[ListaCancionesPrueba.length - 1]);
+    }
+  };
+
   const currentTime = playerRef.current
     ? playerRef.current.getCurrentTime()
     : "00:00";
@@ -111,7 +137,7 @@ export const Reproductor = () => {
       <div maxwidth="md" className="reproductor">
         <ReactPlayer
           ref={playerRef}
-          url="https://soundcloud.com/theavalanches/interstellar-love-feat-leon"
+          url={cancionPuesta.urlsong2}
           className="reproductor2"
           muted={muted}
           playing={reproduciendo}
@@ -137,6 +163,9 @@ export const Reproductor = () => {
         totalDuration={totalDuration}
         liked={liked}
         likear={likear}
+        nextSong={nextSong}
+        previousSong={previousSong}
+        cancionPuesta={cancionPuesta}
       />
     </>
   );

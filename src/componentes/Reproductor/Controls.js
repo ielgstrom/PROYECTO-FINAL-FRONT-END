@@ -32,6 +32,15 @@ const useStyles = makeStyles((theme) => ({
       transform: "scale(1)",
     },
   },
+  controlIconsLike: {
+    color: "#007acc",
+    fontSize: 30,
+    transform: "scale(0.9)",
+    "&:hover": {
+      color: "#fff",
+      transform: "scale(1)",
+    },
+  },
   volumeSlider: {
     width: 100,
   },
@@ -83,25 +92,26 @@ const Controls = ({
   totalDuration,
   liked,
   likear,
+  nextSong,
+  previousSong,
+  cancionPuesta,
 }) => {
   const classes = useStyles();
   return (
     <div className="container-fluid barraReproduccion">
       <div className="row  justify-content-center align-items-center">
         <div className="col-12 col-sm-2 text-center plainText">
-          <div className="row nombreCancion">
-            Aquí va el nombre de la canción
-          </div>
-          <div className="row Artista">Aquí va el artista</div>
+          <div className="row nombreCancion">{cancionPuesta.título}</div>
+          <div className="row Artista">{cancionPuesta.artista}</div>
         </div>
         {/* <div className="col-sm-1"> */}
         {liked ? (
           <FavoriteBorderIcon
-            className={classes.controlIcons}
+            className={classes.controlIconsLike}
             onClick={likear}
           />
         ) : (
-          <FavoriteIcon className={classes.controlIcons} onClick={likear} />
+          <FavoriteIcon className={classes.controlIconsLike} onClick={likear} />
         )}
         {/* </div> */}
 
@@ -109,6 +119,7 @@ const Controls = ({
           <div className="row justify-content-down text-center">
             <div className="col-12 ">
               <SkipPreviousIcon
+                onClick={previousSong}
                 className={` ${classes.controlIcons} botonPause`}
               />
               {!reverseIcon && (
@@ -123,7 +134,10 @@ const Controls = ({
                   onClick={onPlayPause}
                 />
               )}
-              <SkipNextIcon className={` ${classes.controlIcons} botonNext`} />
+              <SkipNextIcon
+                onClick={nextSong}
+                className={` ${classes.controlIcons} botonNext`}
+              />
             </div>
           </div>
           <div className="row justify-content-center align-items-center">
