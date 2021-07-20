@@ -101,6 +101,22 @@
   margin-top: 1%;
   padding: 1%;
 }
+.listaHistorial {
+  font-size: large;
+  background-color: rgba(255, 255, 255, 0.63);
+  margin-top: 10px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 10px;
+  color: var(--azulprincipal);
+  padding: 10px;
+}
+.listaHistorialTitulo {
+  font-weight: bold;
+}
+.historialTiulo {
+  text-align: center;
+}
 .enunciadoBusqueda {
   color: white;
   margin-left: 3%;
@@ -130,6 +146,24 @@
   height: 10%;
   font-size: large;
 }
+.lorem {
+  overflow-y: scroll;
+  height: 75%;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--oscuroFondo);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--azulprincipal);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--azulsecundario);
+}
 .btnBuscar {
   font-size: large;
   width: 93%;
@@ -138,6 +172,7 @@
   margin-left: 4%;
   margin-right: 3%;
   border-radius: 10px;
+  margin-bottom: 8px;
 }
 .contenedorMatches {
   width: 300px;

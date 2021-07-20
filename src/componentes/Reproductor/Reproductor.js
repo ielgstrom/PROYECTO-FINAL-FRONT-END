@@ -1,11 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 import ReactPlayer from "react-player";
-import { IconButton } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
-import Tooltip from "@material-ui/core/Tooltip";
+
 import Controls from "./Controls";
+import { useEffect } from "react";
 const useStyles = makeStyles((theme) => ({
   //   button: {
   //   margin: theme.spacing(1),
@@ -42,12 +41,15 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
     volume: 0.5,
     seeking: false,
     liked: true,
+    loop: false,
   });
-  const { reproduciendo, played, muted, volume, liked } = reproduccion;
+  const { reproduciendo, played, muted, volume, liked, loop } = reproduccion;
 
   const playerRef = useRef(null);
   const [reverseIcon, setReverseIcon] = useState(true);
+
   const [cancionPuesta, setCancionPuesta] = useState(ListaCancionesPrueba[0]);
+
   const reproducirOPausar = () => {
     setReproduccion({
       ...reproduccion,
@@ -85,6 +87,7 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
   };
 
   const handleSeekChange = (e, newValue) => {
+    // console.log(parseFloat(newValue / 100));
     setReproduccion({ ...reproduccion, played: parseFloat(newValue / 100) });
   };
 
@@ -93,25 +96,20 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
   };
 
   const handleSeekMouseUp = (e, newValue) => {
+    console.log({ value: e.target });
     setReproduccion({ ...reproduccion, seeking: false });
-    playerRef.current.seekTo(newValue / 100);
+    playerRef.current.seekTo(newValue / 100, "fraction");
   };
 
-  const nextSong = () => {
-    if (
-      ListaCancionesPrueba[ListaCancionesPrueba.length - 1].urlsong2 !==
-      cancionPuesta.urlsong2
-    ) {
-      setCancionPuesta(
-        ListaCancionesPrueba[ListaCancionesPrueba.indexOf(cancionPuesta) + 1]
-      );
-    } else if (
-      ListaCancionesPrueba[ListaCancionesPrueba.length - 1].urlsong2 ===
-      cancionPuesta.urlsong2
-    ) {
-      setCancionPuesta(ListaCancionesPrueba[0]);
+  const nextSong = (lista) => {
+    if (lista[lista.length - 1].urlsong2 !== cancionPuesta.urlsong2) {
+      setCancionPuesta(lista[lista.indexOf(cancionPuesta) + 1]);
+    } else if (lista[lista.length - 1].urlsong2 === cancionPuesta.urlsong2) {
+      setCancionPuesta(lista[0]);
     }
   };
+
+  useEffect(() => nextSong(ListaCancionesPrueba), [ListaCancionesPrueba]);
 
   const previousSong = () => {
     if (ListaCancionesPrueba[0].urlsong2 !== cancionPuesta.urlsong2) {
@@ -120,9 +118,16 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
       );
     } else if (ListaCancionesPrueba[0].urlsong2 === cancionPuesta.urlsong2) {
       setCancionPuesta(ListaCancionesPrueba[ListaCancionesPrueba.length - 1]);
+    } else setCancionPuesta(cancionPuesta);
+  };
+  const unaSolaCancion = () => {
+    if (ListaCancionesPrueba.length !== 1) {
+      return false;
+    } else if (ListaCancionesPrueba.length === 1) {
+      return true;
     }
   };
-
+  console.log(ListaCancionesPrueba.length);
   const currentTime = playerRef.current
     ? playerRef.current.getCurrentTime()
     : "00:00";
@@ -132,6 +137,7 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
 
   const elapsedTime = format(currentTime);
   const totalDuration = format(duration);
+  console.log(unaSolaCancion() && "rojo");
   return (
     <>
       <div maxwidth="md" className="reproductor">
@@ -143,7 +149,8 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
           playing={reproduciendo}
           onProgress={tiempoTranscurrido}
           volume={volume}
-          // loop={true}
+          // onEnded={nextSong}
+          loop={loop}
         />
       </div>
       <Controls
@@ -166,6 +173,7 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
         nextSong={nextSong}
         previousSong={previousSong}
         cancionPuesta={cancionPuesta}
+        ListaCancionesPrueba={ListaCancionesPrueba}
       />
     </>
   );

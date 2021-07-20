@@ -18,6 +18,7 @@ import VolumeMute from "@material-ui/icons/VolumeOff";
 import Popover from "@material-ui/core/Popover";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import CachedIcon from "@material-ui/icons/Cached";
 
 const useStyles = makeStyles((theme) => ({
   //   button: {
@@ -95,6 +96,7 @@ const Controls = ({
   nextSong,
   previousSong,
   cancionPuesta,
+  ListaCancionesPrueba,
 }) => {
   const classes = useStyles();
   return (
@@ -135,7 +137,7 @@ const Controls = ({
                 />
               )}
               <SkipNextIcon
-                onClick={nextSong}
+                onClick={() => nextSong(ListaCancionesPrueba)}
                 className={` ${classes.controlIcons} botonNext`}
               />
             </div>
