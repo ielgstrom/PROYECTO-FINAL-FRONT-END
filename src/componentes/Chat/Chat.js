@@ -4,7 +4,7 @@ export const Chat = () => {
   return (
     <>
       <div className="header Main">
-        <h2 className="enunciadoBusqueda">CHAT</h2>
+        <h2 className="enunciadoBusquedaChat">CHAT</h2>
         <div className="containerChat"></div>
         <form className=" d-flex flex-row">
           <input
