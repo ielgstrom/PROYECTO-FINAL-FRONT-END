@@ -4,7 +4,7 @@ export const CancionesFavoritas = ({ ListaCancionesPrueba }) => {
   return (
     <>
       <div className="header Main">
-        <h2 className="enunciadoBusqueda">Lista de Canciones Favoritas</h2>
+        <h2 className="enunciadoBusquedaFavs">LISTA DE CANCIONES FAVORITAS</h2>
         <div className="scrollLikes">
           {ListaCancionesPrueba.map((elemento) => (
             <div className="tituloBusqueda">
