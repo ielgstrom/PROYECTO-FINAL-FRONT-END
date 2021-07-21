@@ -1,3 +1,4 @@
+import "./Reproductor.css";
 import React, { useState, useRef } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 
@@ -5,7 +6,7 @@ import ReactPlayer from "react-player";
 import { IconButton } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Tooltip from "@material-ui/core/Tooltip";
-import Controls from "./Controls";
+import Controls from "../Controls/Controls";
 const useStyles = makeStyles((theme) => ({
   //   button: {
   //   margin: theme.spacing(1),
@@ -170,3 +171,4 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
     </>
   );
 };
+export default useStyles;

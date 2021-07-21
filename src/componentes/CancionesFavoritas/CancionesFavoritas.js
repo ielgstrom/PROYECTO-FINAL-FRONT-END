@@ -1,3 +1,4 @@
+import "./CancionesFavoritas.css";
 export const CancionesFavoritas = ({ ListaCancionesPrueba }) => {
   return (
     <>
@@ -10,3 +11,4 @@ export const CancionesFavoritas = ({ ListaCancionesPrueba }) => {
     </>
   );
 };
+export default CancionesFavoritas;

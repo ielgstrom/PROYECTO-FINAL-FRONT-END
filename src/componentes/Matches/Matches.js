@@ -1,4 +1,5 @@
 import { FaComments, FaCog, FaTimes, FaHeart } from "react-icons/fa";
+import "./Matches.css";
 export const Matches = () => {
   return (
     <>
@@ -49,5 +50,5 @@ export const Matches = () => {
     </>
   );
 };
-
+export default Matches;
 //se tiene que llamar en PagPrincipal

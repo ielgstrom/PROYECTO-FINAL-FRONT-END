@@ -1,0 +1,107 @@
+.contenedorTotal{
+height: 100vh;
+background-color: #000;
+}
+.informacionesPerfil{
+background-color: #E5E5E5;
+width: 170vh;
+border: 5px solid #49a6f7;
+}
+.contenedorPrincipal{
+width: 170vh;
+height: 90vh;
+margin-left: 210px;
+}
+
+p{
+margin-left: -70px;
+margin-top: 8px;
+font-size: 15px;
+color: #000;
+}
+h1{
+color: #000;
+}
+h4{
+color: #000;
+}
+.linea{
+margin-left: -10px;
+margin-bottom: -10px;
+margin-top: -15px;
+color: #000;
+size: 2ch;
+}
+.infoUsuario{
+margin-left: -90px;
+margin-top: -5px;
+text-align: center;
+}
+.nombre2{
+margin-left: 30px;
+}
+.imagenPerfil{
+margin-left: 50px;
+}
+.contenedorImagen{
+width: 123px;
+height: 127px;
+background-color: #49a6f7;
+margin-left: -50px;
+}
+.botonGenero{
+width: 42px;
+height: 42px;
+background-color: white;
+border-radius: 50%;
+border: 1px solid #ddd;
+-webkit-appearance: none;
+cursor: pointer;
+margin-left: 35px;
+margin-top: 10px;
+}
+.generos{
+color: #000;
+text-align: center;
+}
+.generoCancion{
+margin-left: 35px;
+}
+.elecionGenero{
+margin-left: 100px;
+width: 90px;
+height: 90px;
+background-color: #7C7C7C;
+border-radius: 10px;
+}
+.fechaCiudad{
+margin-left: 20px;
+font-size: 24px;
+}
+.contenedorTitulos{
+height: 48px;
+width: 280px;
+background-color: #7C7C7C;
+border-radius: 10px;
+margin-right: 10px;
+margin-left: 50px;
+}
+.tituloCancion{
+color: white;
+margin-left: 5px;
+margin-top: 1px;
+margin-bottom: 5px;
+}
+.botones2{
+border-radius: 5px;
+width: 200px;
+height: 50px;
+margin-left: 20px;
+background-color: #DB69AF;
+color: white;
+margin-top: -50px;
+margin-left: 150px;
+}
+.contenedorBotones{
+margin-top: 60px;
+}

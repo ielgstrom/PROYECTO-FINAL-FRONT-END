@@ -1,0 +1,47 @@
+.barraReproduccion {
+  height: 13vh;
+  margin: 0;
+  background-color: var(--oscuroDelantero);
+  box-shadow: 0px -2px 3px rgba(0, 0, 0, 0.322);
+}
+.nombreCancion {
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  color: var(--azulprincipal);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.Artista {
+  font-size: medium;
+  text-align: center;
+  color: var(--azulprincipal);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.botonBack,
+.botonPlay,
+.botonNext {
+  size: 100px;
+  font-size: larger;
+}
+.tiempoCancion {
+  color: white;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 6px;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: medium;
+}
+.barritaReproductora {
+  padding-left: 2px;
+  padding-right: 2px;
+}

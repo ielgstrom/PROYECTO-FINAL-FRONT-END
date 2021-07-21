@@ -1,3 +1,4 @@
+import "./Perfil.css";
 export const Perfil = () => {
   return (
     <>
@@ -89,3 +90,4 @@ export const Perfil = () => {
     </>
   );
 };
+export default Perfil;

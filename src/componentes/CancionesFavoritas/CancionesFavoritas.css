@@ -1,0 +1,17 @@
+.enunciadoBusqueda {
+  color: white;
+  margin-left: 3%;
+  margin-bottom: 2%;
+
+  margin-top: 1%;
+}
+.tituloBusqueda {
+  color: White;
+  font-size: large;
+  background-color: var(--oscuroDelantero);
+  display: block;
+  margin-left: 4%;
+  margin-right: 2%;
+  margin-top: 1%;
+  padding: 1%;
+}
