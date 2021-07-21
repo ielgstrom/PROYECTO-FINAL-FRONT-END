@@ -1,4 +1,3 @@
-
 import "./Reproductor.css";
 import React, { useState, useRef, useEffect } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
@@ -37,7 +36,7 @@ const format = (seconds) => {
   return `${mm}:${ss}`;
 };
 export const Reproductor = ({ ListaCancionesPrueba }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
   const [reproduccion, setReproduccion] = useState({
     reproduciendo: true,
     played: 0,
@@ -182,4 +181,4 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
     </>
   );
 };
-export default useStyles;
+export default Reproductor;
