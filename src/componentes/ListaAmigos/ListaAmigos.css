@@ -1,10 +1,5 @@
-:root {
-  --oscuroFondo: #161616;
-  --oscuroDelantero: #1f1f1f;
-  --azulprincipal: #007acc;
-  --azulsecundario: #0066aa;
-}
-.listaHistorial {
+.AmigoIndiv {
+  margin: 5px;
   font-size: large;
   background-color: rgba(255, 255, 255, 0.63);
   margin-top: 10px;
@@ -13,14 +8,23 @@
   border-radius: 10px;
   color: var(--azulprincipal);
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
-.listaHistorialTitulo {
+.nombreAmigui {
   font-weight: bold;
-}
-.artistaHisotrial,
-.listaHistorialTitulo {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.IconoMensaje {
+  transform: scale(1.5, 1.5);
+  color: #b1568e;
+  margin-bottom: 3px;
+  margin-right: 3px;
+}
+.IconoMensaje:hover {
+  transform: scale(1.7, 1.7);
+  color: #db69af;
 }
