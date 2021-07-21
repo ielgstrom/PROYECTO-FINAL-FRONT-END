@@ -33,28 +33,6 @@ export const SidebarIzquierdo = () => {
       artista: "King Princess",
       título: "Pain",
     },
-    {
-      urlsong2:
-        "https://soundcloud.com/mariaarnalimarcelbages-music/el-gran-silencio",
-      artista: "Maria Arnal i Marcel Bagés",
-      título: "El gran silencio",
-    },
-    {
-      urlsong2: "https://soundcloud.com/quelle-chris/graphic-bleed-outs-feat",
-      artista: "Quelle Chris",
-      título: "Graphic Bleeds Outs",
-    },
-    {
-      urlsong2: "https://soundcloud.com/kingprincessmusic/pain",
-      artista: "King Princess",
-      título: "Pain",
-    },
-    {
-      urlsong2:
-        "https://soundcloud.com/mariaarnalimarcelbages-music/el-gran-silencio",
-      artista: "Maria Arnal i Marcel Bagés",
-      título: "El gran silencio",
-    },
   ];
   const ListaCancionesPrueba2 = [
     {

@@ -1,5 +1,5 @@
 import "./CancionesFavoritas.css";
-import { FaPlay } from "react-icons/fa";
+import { FaBan, FaPlay, FaTrash } from "react-icons/fa";
 export const CancionesFavoritas = ({ ListaCancionesPrueba }) => {
   return (
     <>
@@ -8,10 +8,13 @@ export const CancionesFavoritas = ({ ListaCancionesPrueba }) => {
         <div className="scrollLikes">
           {ListaCancionesPrueba.map((elemento) => (
             <div className="tituloBusqueda">
-              <FaPlay className="PlayLikesButton" />
-              <div className="PlayTitlesButton">
-                {elemento.título} - {elemento.artista}
+              <div className="likesIzquierda">
+                <FaPlay className="PlayLikesButton" />
+                <div className="PlayTitlesButton">
+                  {elemento.título} - {elemento.artista}
+                </div>
               </div>
+              <FaBan className="basura" />
             </div>
           ))}
         </div>

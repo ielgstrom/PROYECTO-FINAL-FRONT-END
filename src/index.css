@@ -3,6 +3,7 @@
   --oscuroDelantero: #1f1f1f;
   --azulprincipal: #007acc;
   --azulsecundario: #0066aa;
+  --rosaPrincipal: #db69af;
 }
 
 .plainText {
@@ -59,6 +60,14 @@
 
 .buscadorMusica {
   margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  height: 10%;
+  font-size: large;
+}
+.buscadorAmiguis {
+  margin-bottom: 0px;
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 10px;

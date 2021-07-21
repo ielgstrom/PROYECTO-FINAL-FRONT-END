@@ -8,6 +8,7 @@ import CancionesFavoritas from "./componentes/CancionesFavoritas/CancionesFavori
 import Perfil from "./componentes/Perfil/Perfil";
 import Matches from "./componentes/Matches/Matches";
 import Principal from "./componentes/Principal/Principal";
+import Chat from "./componentes/Chat/Chat";
 function App() {
   const ListaCancionesPrueba = [
     {
@@ -75,6 +76,9 @@ function App() {
                 <CancionesFavoritas
                   ListaCancionesPrueba={ListaCancionesPrueba}
                 />
+              </Route>
+              <Route exact path="/chat">
+                <Chat />
               </Route>
             </Switch>
             <SidebarDerecho className="ListaAmigos" />
