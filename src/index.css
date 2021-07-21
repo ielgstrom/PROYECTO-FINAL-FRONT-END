@@ -32,9 +32,11 @@
 }
 
 .Main {
-  flex: 4 1 0;
+  flex: 5 1 0;
   height: 87vh;
+  margin: 0;
 }
+
 @media (max-width: 575px) {
   .volumen {
     display: none;
@@ -57,6 +59,24 @@
   height: 10%;
   font-size: large;
 }
+.lorem {
+  overflow-y: scroll;
+  height: 75%;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--oscuroFondo);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--azulprincipal);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--azulsecundario);
+}
 .btnBuscar {
   font-size: large;
   width: 93%;
@@ -65,6 +85,5 @@
   margin-left: 4%;
   margin-right: 3%;
   border-radius: 10px;
+  margin-bottom: 8px;
 }
-
-/*estilos perfil*/

@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import { Perfil } from "../Perfil";
 import { CancionesFavoritas } from "./CancionesFavoritas";
-import { Reproductor } from "../Reproductor/Reproductor";
-export const Principal = () => {
+import { Reproductor } from "./Reproductor/Reproductor";
+import { HistorialSidebar } from "./HistorialSidebar";
+export const PagPrincipal = () => {
   const ListaCancionesPrueba = [
     {
       urlsong2:
         "https://soundcloud.com/theavalanches/interstellar-love-feat-leon",
       artista: "The Avalanches",
       título: "Interstelar Love",
+    },
+    {
+      urlsong2: "https://soundcloud.com/nationalxball2018/20-seconds",
+      título: "Darkest Hour",
+      artista: "Sevdaliza",
     },
     {
       urlsong2:
@@ -21,11 +27,34 @@ export const Principal = () => {
       artista: "Quelle Chris",
       título: "Graphic Bleeds Outs",
     },
+    {
+      urlsong2: "https://soundcloud.com/kingprincessmusic/pain",
+      artista: "King Princess",
+      título: "Pain",
+    },
+    {
+      urlsong2:
+        "https://soundcloud.com/mariaarnalimarcelbages-music/el-gran-silencio",
+      artista: "Maria Arnal i Marcel Bagés",
+      título: "El gran silencio",
+    },
   ];
 
-  const [verFavoritas, setVerFavoritas] = useState(true);
+  const ListaCancionesPrueba2 = [
+    {
+      urlsong2: "https://soundcloud.com/nationalxball2018/20-seconds",
+      título: "Darkest Hour",
+      artista: "Sevdaliza",
+    },
+  ];
+  const [verFavoritas, setVerFavoritas] = useState(false);
   const viewCancionesFavoritas = () => {
     setVerFavoritas(!verFavoritas);
+  };
+  const [listaAReproducir, setListaAReproducir] =
+    useState(ListaCancionesPrueba);
+  const reproducirLista = (List) => {
+    setListaAReproducir(List);
   };
   return (
     <>
@@ -42,11 +71,16 @@ export const Principal = () => {
             </form>
             <button
               type="button"
-              class="btnBuscar btn btn-primary"
+              className="btnBuscar btn btn-primary"
               onClick={viewCancionesFavoritas}
             >
-              Ver tus canciones favoritas
+              Canciones favoritas
             </button>
+
+            <h3 className="historialTiulo">Historial</h3>
+            <div className="lorem">
+              <HistorialSidebar historial={ListaCancionesPrueba} />
+            </div>
           </aside>
 
           <p className="header Main">
@@ -64,10 +98,11 @@ export const Principal = () => {
         </div>
 
         <Reproductor ListaCancionesPrueba={ListaCancionesPrueba} /> 
+
       </div>
     </>
   );
 };
-export default Principal;
+export default PagPrincipal;
 
 // tarea de hoy, dividir en componentes la componente principal
