@@ -21,8 +21,7 @@ function App() {
       {!login && <PagPrincipal />}
       {login && <button onClick={cambiar}>clica aqui</button>} */}
 
-      <div className="contenedor row center dark">
-
+      <div>
         <Login
           datosAcceso={datosAcceso}
           setDatosAcceso={setDatosAcceso}

@@ -31,8 +31,9 @@ export const Login = (props) => {
   };
   return (
     <>
-      <div class= "container fondo-login rounded-3">
-        <form noValidate onSubmit={compruebaLogin}>
+      <div className= "container-xl contenedorPrincipal-Login">
+        <div className="login-center">
+        <form className= "form" noValidate onSubmit={compruebaLogin}>
           <div className="form-group">
             <label htmlFor="username">Nombre de usuario:</label>
             <input
@@ -70,7 +71,7 @@ export const Login = (props) => {
           </div>
             <br></br>
           <button
-            className="boton-inicio-sesion btn btn-primary btn-lg align-center"
+            className="boton-inicio-sesion btn btn-primary btn-lg align-text"
             type="submit"
           //disabled={formularioInvalido}
           >
@@ -79,6 +80,7 @@ export const Login = (props) => {
           {error && <p className="error">Credenciales erróneas</p>}
         </form>
         </div>
+      </div>
     </>
   );
 };
