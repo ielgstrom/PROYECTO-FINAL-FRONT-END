@@ -1,0 +1,10 @@
+.Main {
+  flex: 5 1 0;
+  height: calc(100vh-90px);
+  margin: 0;
+}
+.header {
+  background-color: var(--oscuroFondo);
+  margin-bottom: 0;
+  height: calc(100vh-90px);
+}

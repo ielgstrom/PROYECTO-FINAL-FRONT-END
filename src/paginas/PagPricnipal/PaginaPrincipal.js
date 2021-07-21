@@ -4,6 +4,7 @@ import { CancionesFavoritas } from "../../componentes/CancionesFavoritas/Cancion
 import { Reproductor } from "../../componentes/Reproductor/Reproductor";
 import { HistorialSidebar } from "../../componentes/HistorialSidebar/Historialsidebar";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Principal } from "../../componentes/Principal/Principal";
 export const PaginaPrincipal = () => {
   // const ListaCancionesPrueba = [
   //   {
@@ -59,9 +60,9 @@ export const PaginaPrincipal = () => {
   // };
   return (
     <>
-      <div className="d-flex flex-column ">
-        <div className="d-flex  align-items-stretch paginaPrincipal">
-          {/* <aside className=" section listaCanciones">
+      {/* <div className="d-flex flex-column ">
+        <div className="d-flex  align-items-stretch paginaPrincipal"> */}
+      {/* <aside className=" section listaCanciones">
             <form className=" d-flex flex-row">
               <input
                 type="text"
@@ -84,19 +85,19 @@ export const PaginaPrincipal = () => {
             </div>
           </aside> */}
 
-          <p className="header Main"></p>
-          {/* <CancionesFavoritas ListaCancionesPrueba={ListaCancionesPrueba} /> */}
+      <Principal />
+      {/* <CancionesFavoritas ListaCancionesPrueba={ListaCancionesPrueba} /> */}
 
-          {/* <aside className="section ListaAmigos">
+      {/* <aside className="section ListaAmigos">
             <button type="button" className="btn btn-primary">
               Ver perfil
             </button>
             <Link to="/matches">Matches</Link>
           </aside> */}
-        </div>
+      {/* </div> */}
 
-        {/* <Reproductor ListaCancionesPrueba={ListaCancionesPrueba} /> */}
-      </div>
+      {/* <Reproductor ListaCancionesPrueba={ListaCancionesPrueba} /> */}
+      {/* // </div> */}
     </>
   );
 };
