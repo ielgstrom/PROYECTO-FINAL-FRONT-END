@@ -40,8 +40,7 @@ export const PagCancionesFavoritas = () => {
   ];
   return (
     <div>
-      <CancionesFavoritas />
-      <Reproductor ListaCancionesPrueba={ListaCancionesPrueba} />
+      <CancionesFavoritas ListaCancionesPrueba={ListaCancionesPrueba} />
     </div>
   );
 };

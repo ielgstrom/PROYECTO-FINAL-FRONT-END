@@ -21,7 +21,7 @@
 .barraDeReproduccion {
   background-color: var(--oscuroDelantero);
   position: absolute;
-  top: 80%;
+  bottom: 0;
 }
 .barraReproduccion {
   height: 13vh;
