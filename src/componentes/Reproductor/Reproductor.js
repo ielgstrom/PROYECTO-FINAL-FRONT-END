@@ -108,7 +108,7 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
       setCancionPuesta(lista[0]);
     }
   };
-
+// eslint-disable-next-line
   useEffect(() => nextSong(ListaCancionesPrueba), [ListaCancionesPrueba]);
 
   const previousSong = () => {
