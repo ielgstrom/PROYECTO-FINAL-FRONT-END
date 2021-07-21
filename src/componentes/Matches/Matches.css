@@ -1,6 +1,7 @@
 .contenedorMatches {
   width: 300px;
-  height: 90vh;
+  height: calc(100vh - 100px);
+  border-radius: 10px;
   background-color: #252526;
 }
 .futurasParejas {

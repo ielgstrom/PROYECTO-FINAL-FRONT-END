@@ -112,7 +112,7 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
     }
   };
 
-  // useEffect(() => nextSong(ListaCancionesPrueba), [ListaCancionesPrueba]);
+  useEffect(() => nextSong(ListaCancionesPrueba), [ListaCancionesPrueba]);
 
   const previousSong = () => {
     if (ListaCancionesPrueba[0].urlsong2 !== cancionPuesta.urlsong2) {
@@ -152,8 +152,8 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
           playing={reproduciendo}
           onProgress={tiempoTranscurrido}
           volume={volume}
-          // onEnded={nextSong}
-          loop={loop}
+          onEnded={() => nextSong(ListaCancionesPrueba)}
+          // loop={loop}
         />
       </div>
       <Controls

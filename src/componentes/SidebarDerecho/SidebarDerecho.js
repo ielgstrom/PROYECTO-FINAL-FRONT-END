@@ -4,10 +4,12 @@ export const SidebarDerecho = () => {
   return (
     <>
       <aside className="section ListaAmigos">
-        <button type="button" className="btn btn-primary">
+        <Link to="/Perfil" type="button" className="btn btn-primary btnBuscar">
           Ver perfil
-        </button>
-        <Link to="/matches">Matches</Link>
+        </Link>
+        <Link to="/matches" type="button" className="btn btn-primary btnBuscar">
+          Matches
+        </Link>
       </aside>
     </>
   );

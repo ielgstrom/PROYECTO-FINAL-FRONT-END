@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import PaginaPrincipal from "./paginas/PagPricnipal/PaginaPrincipal";
-import PaginaPerfil from "./paginas/PagPerfil/PaginaPerfil";
-import PaginaMatches from "./paginas/PagMatches/PaginaMatches";
-import PagCancionesFavoritas from "./paginas/PagCancionesFavoritas/PagCancionesFavoritas";
+
 import Reproductor from "./componentes/Reproductor/Reproductor";
 import SidebarIzquierdo from "./componentes/Siderbarizquierdo/SidebarIzquierdo";
 import SidebarDerecho from "./componentes/SidebarDerecho/SidebarDerecho";
+import CancionesFavoritas from "./componentes/CancionesFavoritas/CancionesFavoritas";
+import Perfil from "./componentes/Perfil/Perfil";
+import Matches from "./componentes/Matches/Matches";
+import Principal from "./componentes/Principal/Principal";
 function App() {
   const ListaCancionesPrueba = [
     {
@@ -42,6 +43,17 @@ function App() {
       artista: "Maria Arnal i Marcel Bagés",
       título: "El gran silencio",
     },
+    {
+      urlsong2:
+        "https://soundcloud.com/bovalonmusic/sets/yelle-je-taime-encore-rawd",
+      artista: "Yelle",
+      título: "Je t'aime encore",
+    },
+    {
+      urlsong2: "https://soundcloud.com/nathy-peluso/delito",
+      artista: "Nathy Peluso",
+      título: "DELITO",
+    },
   ];
   return (
     <>
@@ -51,16 +63,18 @@ function App() {
             <SidebarIzquierdo className="listaCanciones" />
             <Switch className="header Main">
               <Route exact path="/">
-                <PaginaPrincipal />
+                <Principal />
               </Route>
               <Route exact path="/perfil">
-                <PaginaPerfil />
+                <Perfil />
               </Route>
               <Route exact path="/matches">
-                <PaginaMatches />
+                <Matches />
               </Route>
               <Route exact path="/cancionesFavoritas">
-                <PagCancionesFavoritas />
+                <CancionesFavoritas
+                  ListaCancionesPrueba={ListaCancionesPrueba}
+                />
               </Route>
             </Switch>
             <SidebarDerecho className="ListaAmigos" />

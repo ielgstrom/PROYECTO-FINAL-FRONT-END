@@ -2,7 +2,7 @@ import "./Perfil.css";
 export const Perfil = () => {
   return (
     <>
-      <div className="contenedorTotal">
+      <div className="contenedorTotal Main header">
         <div className="row contenedorPrincipal">
           <div className="col-10 informacionesPerfil">
             <h1>General</h1>
