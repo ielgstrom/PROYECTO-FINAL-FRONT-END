@@ -30,7 +30,7 @@
 }
 .scrollLikes {
   overflow-y: scroll;
-  position: absolute;
+
   height: calc(100vh - 130px);
   background-color: transparent;
 }
