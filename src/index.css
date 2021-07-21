@@ -3,6 +3,7 @@
   --oscuroDelantero: #1f1f1f;
   --azulprincipal: #007acc;
   --azulsecundario: #0066aa;
+  --oscuroFondoSecundario:#404040;
 }
 
 .plainText {
@@ -380,4 +381,36 @@ h4 {
 }
 .contenedorBotones {
   margin-top: 150px;
+}
+/*Login css*/
+.body{
+  background-color: var(--oscuroFondo);
+}
+.fondo-login {
+  background-color: var(--oscuroFondoSecundario);
+  color: #ffffff;
+}
+
+.login-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.square {
+  position: relative;
+  width: 50%;
+}
+
+.square:after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }

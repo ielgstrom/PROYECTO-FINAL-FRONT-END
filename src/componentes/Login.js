@@ -31,8 +31,7 @@ export const Login = (props) => {
   };
   return (
     <>
-      <div class>
-        <h2>Login</h2>
+      <div class= "container fondo-login rounded-3">
         <form noValidate onSubmit={compruebaLogin}>
           <div className="form-group">
             <label htmlFor="username">Nombre de usuario:</label>
@@ -54,6 +53,9 @@ export const Login = (props) => {
               className="form-control"
             />
           </div>
+            <label htmlFor="recordarPassword" className="form-check-label fw-bold">
+              ¿Has olvidado tu contraseña?
+            </label>
           <div className="form-check">
             <input
               type="checkbox"
@@ -66,8 +68,9 @@ export const Login = (props) => {
               Recordar contraseña
             </label>
           </div>
+            <br></br>
           <button
-            className="boton-inicio-sesion btn btn-primary btn-lg"
+            className="boton-inicio-sesion btn btn-primary btn-lg align-center"
             type="submit"
           //disabled={formularioInvalido}
           >
@@ -75,7 +78,7 @@ export const Login = (props) => {
           </button>
           {error && <p className="error">Credenciales erróneas</p>}
         </form>
-      </div>
+        </div>
     </>
   );
 };
