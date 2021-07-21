@@ -49,7 +49,7 @@ function App() {
         <div className="d-flex  align-items-stretch paginaPrincipal">
           <Router className="c">
             <SidebarIzquierdo className="listaCanciones" />
-            <Switch className=".Main">
+            <Switch className="header Main">
               <Route exact path="/">
                 <PaginaPrincipal />
               </Route>

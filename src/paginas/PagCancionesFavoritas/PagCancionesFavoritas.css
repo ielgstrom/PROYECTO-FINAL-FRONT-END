@@ -1,0 +1,15 @@
+:root {
+  --oscuroFondo: #161616;
+  --oscuroDelantero: #1f1f1f;
+  --azulprincipal: #007acc;
+  --azulsecundario: #0066aa;
+}
+.Main {
+  flex: 5 1 0;
+  height: calc(100vh-90px);
+  margin: 0;
+}
+.header {
+  background-color: var(--oscuroFondo);
+  margin-bottom: 0;
+}
