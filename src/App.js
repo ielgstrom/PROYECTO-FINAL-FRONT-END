@@ -47,7 +47,7 @@ function App() {
     <>
       <div className="d-flex flex-column">
         <div className="d-flex  align-items-stretch paginaPrincipal">
-          <Router>
+          <Router className="c">
             <SidebarIzquierdo className="listaCanciones" />
             <Switch className=".Main">
               <Route exact path="/">
@@ -64,12 +64,12 @@ function App() {
               </Route>
             </Switch>
             <SidebarDerecho className="ListaAmigos" />
-            <Reproductor
-              ListaCancionesPrueba={ListaCancionesPrueba}
-              className="barraReproduccion barraDeReproduccion"
-            />
           </Router>
         </div>
+        <Reproductor
+          ListaCancionesPrueba={ListaCancionesPrueba}
+          className="barraReproduccion barraDeReproduccion"
+        />
       </div>
     </>
   );

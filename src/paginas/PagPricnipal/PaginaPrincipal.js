@@ -84,12 +84,7 @@ export const PaginaPrincipal = () => {
             </div>
           </aside> */}
 
-          {/* <p className="header Main">
-            {false && <Perfil />}
-            {verFavoritas && (
-              <CancionesFavoritas ListaCancionesPrueba={ListaCancionesPrueba} />
-            )}
-          </p> */}
+          <p className="header Main"></p>
           {/* <CancionesFavoritas ListaCancionesPrueba={ListaCancionesPrueba} /> */}
 
           {/* <aside className="section ListaAmigos">
