@@ -1,5 +1,5 @@
 .barraReproduccion {
-  height: 13vh;
+  height: 90px;
   margin: 0;
   background-color: var(--oscuroDelantero);
   box-shadow: 0px -2px 3px rgba(0, 0, 0, 0.322);
@@ -23,12 +23,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-.botonBack,
-.botonPlay,
-.botonNext {
-  size: 100px;
-  font-size: larger;
-}
+
 .tiempoCancion {
   color: white;
   padding-left: 0;

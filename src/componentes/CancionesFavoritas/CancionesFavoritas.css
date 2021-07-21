@@ -24,6 +24,9 @@
   padding: 15px;
   padding-left: 30px;
 }
+.tituloBusqueda:hover {
+  background-color: #302f2f;
+}
 .scrollLikes {
   overflow-y: scroll;
   height: calc(100vh - 144px);
@@ -40,4 +43,12 @@
 
 .PlayTitlesButton {
   padding-left: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.PlayLikesButton:hover {
+  color: var(--azulprincipal);
 }
