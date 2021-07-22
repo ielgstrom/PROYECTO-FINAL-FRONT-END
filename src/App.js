@@ -1,10 +1,9 @@
 import { useState } from "react";
 import React from "react";
-
 import { Principal } from "./componentes/Principal/Principal";
 function App() {
   const [login, setLogin] = useState(true);
-  const cambiar = () => {
+  const cambiarAPaginaPrincipal = () => {
     setLogin(!login);
   };
   return (
@@ -29,10 +28,26 @@ function App() {
                 className="form-control"
               />
             </div>
+            <div className="form-group">
+              <label htmlFor="recordarPassword" className="form-check-label fw-bold">
+                ¿Has olvidado tu contraseña?
+              </label>
+            </div>
             <p></p>
-            <button className="btn-primary btn-lg" onClick={cambiar}>Iniciar Sesión</button>
+            <div className="boton-login ">
+            <button className="btn-primary btn-lg" onClick={cambiarAPaginaPrincipal}>Iniciar Sesión</button>
+            </div>
+            <hr className="linea-divisoria"></hr>
+            <div className="form-group">
+              <label htmlFor="recordarPassword" className="form-check-label fw-bold">
+                ¿No tienes cuenta?
+              </label>
+            </div>
+            <div className="boton-login">
+              <button className="btn-primary btn-lg">Registrarme</button>
+            </div>
           </form>
-      </div>
+        </div>
       </div>}
       {!login && <Principal />}
     </>

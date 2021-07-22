@@ -122,7 +122,6 @@ ul,li
   margin-bottom: 10px;
   border-radius: 10px;
   padding-top: 10px;
-
   text-align: center;
 }
 .btnBuscar:active {
@@ -151,4 +150,11 @@ ul,li
   width: 450px;
   border-radius: 5%;
   padding: 30px;
+}
+.linea-divisoria
+{
+  border: 1px solid #FFFFFF;
+}
+.boton-login{
+  text-align: center;
 }
