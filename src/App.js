@@ -44,7 +44,7 @@ function App() {
               </label>
             </div>
             <div className="boton-login">
-              <button className="btn-primary btn-lg">Registrarme</button>
+              <button className="btn-primary btn-lg "> Registrarme <i class="icon-logo"></i></button>
             </div>
           </form>
         </div>
