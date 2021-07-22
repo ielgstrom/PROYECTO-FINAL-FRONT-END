@@ -64,7 +64,7 @@ export const Perfil = () => {
               <ul className="list-unstyled row">
                 <li className="contenedorTitulos col-3">
                   <p className="tituloCancion">titulo cancion</p>
-                  <p className="tituloCancion">fecha de escuchamiento</p>
+                  <p className="tituloCancion">fecha</p>
                 </li>
                 <li className="contenedorTitulos col-3">
                   <p className="tituloCancion">titulo cancion</p>
