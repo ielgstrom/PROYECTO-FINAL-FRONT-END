@@ -1,14 +1,20 @@
 import { useState } from "react";
 import React from "react";
 import { Principal } from "./componentes/Principal/Principal";
+import { Register } from "./componentes/Register/Register";
 function App() {
   const [login, setLogin] = useState(true);
   const cambiarAPaginaPrincipal = () => {
     setLogin(!login);
   };
+  const [register, setRegister] = useState(true);
+  const cambiarARegister = () => {
+    setRegister(!register);
+  };
+
   return (
     <>
-      {login && <div className="container-xl contenedorPrincipal-Login">
+      {register && <div className="container-xl contenedorPrincipal-Login">
         <div className="login-center">
           <form className="form">
             <label htmlFor="username">Nombre de usuario:</label>
@@ -44,12 +50,13 @@ function App() {
               </label>
             </div>
             <div className="boton-login">
-              <button className="btn-primary btn-lg "> Registrarme <i class="icon-logo"></i></button>
+              <button className="btn-primary btn-lg " onClick={cambiarARegister}> Registrarme <i class="icon-logo"></i></button>
             </div>
           </form>
         </div>
       </div>}
       {!login && <Principal />}
+      {!register && <Register />}
     </>
   );
 }

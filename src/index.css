@@ -127,9 +127,9 @@ ul,li
 .btnBuscar:active {
   border-style: outset;
 }
-/*Login css*/
+/*Login y Register css*/
 
-.contenedorPrincipal-Login{
+.contenedorPrincipal-Login .contenedorPrincipal-Register{
   background-color: var(--oscuroFondo);
   min-height: 100vh;
   margin: 0rem;
@@ -137,7 +137,7 @@ ul,li
   max-width: 100%
 }
 
-.login-center {
+.login-center .register-center{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,7 +155,7 @@ ul,li
 {
   border: 1px solid #FFFFFF;
 }
-.boton-login{
+.boton-login .boton-register{
   text-align: center;
 }
 .icon-logo{
