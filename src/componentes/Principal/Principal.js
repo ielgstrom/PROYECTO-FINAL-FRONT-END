@@ -94,6 +94,7 @@ export const Principal = () => {
     </>
   );
 };
+
 export default Principal;
 
 // tarea de hoy, dividir en componentes la componente principal
