@@ -1,3 +1,4 @@
+import "./Principal.css";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Reproductor from "../Reproductor/Reproductor";
