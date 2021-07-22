@@ -56,14 +56,18 @@ export const SidebarIzquierdo = () => {
   const ponerTexto = (e) => {
     e.preventDefault();
     setTexto(e.target.value);
-    console.log(texto);
+    // console.log(texto);
     return texto;
   };
-
   return (
     <>
       <aside className=" section listaCanciones">
-        <Link to="/busquedaCanciones">
+        <Link
+          to={{
+            pathname: "/busquedaCanciones",
+            state: { texto },
+          }}
+        >
           <form className=" d-flex flex-row">
             <input
               type="text"
@@ -72,6 +76,7 @@ export const SidebarIzquierdo = () => {
               value={texto}
               onChange={ponerTexto}
             ></input>
+            <FaSearch className="iconobuscar" />
           </form>
         </Link>
         <Link
@@ -80,7 +85,7 @@ export const SidebarIzquierdo = () => {
           className="btnBuscar btn btn-primary"
           onClick={viewCancionesFavoritas}
         >
-          Canciones favoritas
+          Favoritas
         </Link>
 
         <h3 className="historialTitulo">Historial</h3>

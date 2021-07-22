@@ -12,3 +12,9 @@
   border-style: hidden hidden solid hidden;
   /* border: 50px; */
 }
+.iconobuscar {
+  transform: (5, 5);
+  margin-top: 19px;
+  margin-left: 11.8vw;
+  position: absolute;
+}
