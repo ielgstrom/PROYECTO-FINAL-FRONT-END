@@ -56,7 +56,10 @@ export const SidebarIzquierdo = () => {
   const ponerTexto = (e) => {
     e.preventDefault();
     setTexto(e.target.value);
+    console.log(texto);
+    return texto;
   };
+
   return (
     <>
       <aside className=" section listaCanciones">
