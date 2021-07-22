@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      {register && <div className="container-xl contenedorPrincipal-Login">
+      {login && <div className="container-xl contenedorPrincipal-Login">
         <div className="login-center">
           <form className="form">
             <label htmlFor="username">Nombre de usuario:</label>
