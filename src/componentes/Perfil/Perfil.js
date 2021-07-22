@@ -21,10 +21,10 @@ export const Perfil = () => {
               </ul>
               <ul className="list-unstyled row">
                 <li className="col-6">
-                  <p className="fechaCiudad">24/05/1998</p>
+                  <p className="fecha">24/05/1998</p>
                 </li>
                 <li className="col-6">
-                  <p className="fechaCiudad">Barcelona</p>
+                  <p className="Ciudad">Barcelona</p>
                 </li>
               </ul>
             </div>

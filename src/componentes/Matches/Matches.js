@@ -26,7 +26,7 @@ export const Matches = () => {
             </div>
             <ul className="contenedorIformaciones list-unstyled">
               <li className="row">
-                <p className="col-12 nombre">
+                <p className="col-12 nombre2">
                   <strong>Nombre, edad</strong>
                 </p>
               </li>
