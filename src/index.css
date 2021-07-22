@@ -4,7 +4,7 @@
   --azulprincipal: #007acc;
   --azulsecundario: #0066aa;
   --rosaPrincipal: #db69af;
-  --oscuroFondoSecundario:#404040;
+  --oscuroFondoSecundario: #404040;
 }
 
 /*Reseteo de CSS*/
@@ -20,8 +20,8 @@ h3 {
   padding: 0;
 }
 
-ul,li
-{
+ul,
+li {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -74,10 +74,10 @@ ul,li
   .listaCanciones,
   .ListaAmigos,
   .Main {
-    height: 82vh;
+    height: calc(100vh - 90px);
   }
   .barraReproduccion {
-    height: 18vh;
+    height: 90px;
   }
 }
 
@@ -129,20 +129,20 @@ ul,li
 }
 /*Login y Register css*/
 
-.contenedorPrincipal-Login .contenedorPrincipal-Register{
+.contenedorPrincipal-Login .contenedorPrincipal-Register {
   background-color: var(--oscuroFondo);
   min-height: 100vh;
   margin: 0rem;
   padding: 0rem;
-  max-width: 100%
+  max-width: 100%;
 }
 
-.login-center .register-center{
+.login-center .register-center {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  color: #ffffff;;
+  color: #ffffff;
 }
 
 .form {
@@ -151,14 +151,13 @@ ul,li
   border-radius: 5%;
   padding: 30px;
 }
-.linea-divisoria
-{
-  border: 1px solid #FFFFFF;
+.linea-divisoria {
+  border: 1px solid #ffffff;
 }
-.boton-login .boton-register{
+.boton-login .boton-register {
   text-align: center;
 }
-.icon-logo{
-  background-image: url('img/favicon.ico');
+.icon-logo {
+  background-image: url("img/favicon.ico");
   position: absolute;
 }

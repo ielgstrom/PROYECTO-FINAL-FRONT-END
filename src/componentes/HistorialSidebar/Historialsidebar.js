@@ -30,14 +30,17 @@ export const HistorialSidebar = ({ historial }) => {
   }, [id_persona]);
 
   useEffect(busquedaHistorial, [busquedaHistorial]);
+
   return (
     <>
-      {listaHistorial.map((elemento) => (
-        <div key={elemento.idCancion.artista} className="listaHistorial">
+      {listaHistorial.map((elemento, i) => (
+        <div key={i} className="listaHistorial">
           <div key={elemento.idCancion.nombre} className="listaHistorialTitulo">
             {elemento.idCancion.nombre}
           </div>
-          <div className="artistaHisotrial">{elemento.idCancion.artista}</div>
+          <div key={elemento.idCancion.artista} className="artistaHisotrial">
+            {elemento.idCancion.artista.nombre}
+          </div>
         </div>
       ))}
     </>
