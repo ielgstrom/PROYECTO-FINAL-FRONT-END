@@ -1,100 +1,102 @@
 .contenedorMatches {
-  width: 300px;
-  height: calc(100vh - 100px);
-  border-radius: 10px;
-  background-color: #252526;
+width: 300px;
+height: 90vh;
+background-color: #252526;
+margin-left: 340px;
 }
 .futurasParejas {
-  width: 290px;
-  height: 290px;
-  background-color: blue;
-  border-radius: 10px;
-  margin-right: auto;
-  margin-left: auto;
+width: 290px;
+height: 290px;
+background-color: blue;
+border-radius: 10px;
+margin-right: auto;
+margin-left: auto;
 }
-.nombre {
-  color: #000;
-  font-size: 48px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.nombre2 {
+color: #73b2e9;
+margin-top: 20px;
 }
 .botones {
-  margin-top: -20px;
+margin-top: -20px;
 }
 .boton {
-  border-radius: 100px;
-  width: 50px;
-  height: 50px;
-  margin-left: 40px;
-  border-color: grey;
-  background-color: #46464e;
+border-radius: 100px;
+width: 50px;
+height: 50px;
+margin-left: 40px;
+border-color: grey;
+background-color: #46464e;
 }
 .boton2 {
-  border-radius: 100px;
-  width: 35px;
-  height: 35px;
-  margin-left: 40px;
-  border-color: grey;
-  background-color: #46464e;
+border-radius: 100px;
+width: 35px;
+height: 35px;
+margin-left: 40px;
+border-color: grey;
+background-color: #46464e;
 }
 .contenedorIformaciones {
-  margin-left: 40px;
+margin-left: 40px;
 }
 .infoPareja {
-  color: #73b2e9;
-  margin-top: -20px;
+color: #73b2e9;
+margin-top: -20px;
+margin-left: 30px;
 }
 
 .myrythm {
-  margin-left: 40px;
+margin-left: 40px;
 }
 
 .logo {
-  color: #49a6f7;
-  font-size: 25px;
-  margin-top: 10px;
-  margin-left: -8px;
+color: #49a6f7;
+font-size: 25px;
+margin-top: 10px;
+margin-left: -8px;
 }
 .logo {
-  margin-left: 50px;
+margin-left: 50px;
 }
 .rechazar {
-  color: red;
-  font-size: 35px;
-  margin-left: -2px;
+color: red;
+font-size: 35px;
+margin-left: -2px;
 }
 .corazon {
-  color: rgb(104, 223, 24);
-  font-size: 35px;
-  margin-left: -1px;
-  margin-top: 3px;
+color: rgb(104, 223, 24);
+font-size: 35px;
+margin-left: -1px;
+margin-top: 3px;
 }
 .botonImpostaciones {
-  border-radius: 100px;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  margin-top: 20px;
-  border: none;
-  background-color: #252526;
-  margin-left: -20px;
+border-radius: 100px;
+width: 30px;
+height: 30px;
+position: relative;
+margin-top: 20px;
+border: none;
+background-color: #252526;
+margin-left: -20px;
 }
 .botonChat {
-  border-radius: 100px;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  margin-top: 20px;
-  border: none;
-  background-color: #252526;
-  margin-left: 50px;
+border-radius: 100px;
+width: 30px;
+height: 30px;
+position: relative;
+margin-top: 20px;
+border: none;
+background-color: #252526;
+margin-left: 50px;
 }
 .icono {
-  color: grey;
-  width: 25px;
-  height: 25px;
-  margin-top: 10px;
-  position: relative;
-  margin-left: -19px;
-  margin-top: -3px;
+color: grey;
+width: 25px;
+height: 25px;
+margin-top: 10px;
+position: relative;
+margin-left: -19px;
+margin-top: -3px;
+}
+.contenedorIformaciones{
+margin-left: 10px;
 }
