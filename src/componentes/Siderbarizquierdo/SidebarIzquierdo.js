@@ -50,16 +50,27 @@ export const SidebarIzquierdo = () => {
   const reproducirLista = (List) => {
     setListaAReproducir(List);
   };
+
+  const [texto, setTexto] = useState("");
+
+  const ponerTexto = (e) => {
+    e.preventDefault();
+    setTexto(e.target.value);
+  };
   return (
     <>
       <aside className=" section listaCanciones">
-        <form className=" d-flex flex-row">
-          <input
-            type="text"
-            className="form-control form-control-md buscadorMusica"
-            placeholder="Buscar Musica"
-          ></input>
-        </form>
+        <Link to="/busquedaCanciones">
+          <form className=" d-flex flex-row">
+            <input
+              type="text"
+              className="form-control form-control-md buscadorMusica"
+              placeholder="Buscar Musica"
+              value={texto}
+              onChange={ponerTexto}
+            ></input>
+          </form>
+        </Link>
         <Link
           to="/cancionesFavoritas"
           type="button"
