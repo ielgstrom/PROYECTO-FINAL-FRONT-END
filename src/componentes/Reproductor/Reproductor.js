@@ -130,7 +130,7 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
       return true;
     }
   };
-  console.log(ListaCancionesPrueba.length);
+  // console.log(ListaCancionesPrueba.length);
   const currentTime = playerRef.current
     ? playerRef.current.getCurrentTime()
     : "00:00";
@@ -140,7 +140,7 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
 
   const elapsedTime = format(currentTime);
   const totalDuration = format(duration);
-  console.log(unaSolaCancion() && "rojo");
+  // console.log(unaSolaCancion() && "rojo");
   return (
     <>
       <div maxwidth="md" className="reproductor">
@@ -177,6 +177,7 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
         previousSong={previousSong}
         cancionPuesta={cancionPuesta}
         ListaCancionesPrueba={ListaCancionesPrueba}
+        reproduciondo={reproduciendo}
       />
     </>
   );

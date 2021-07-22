@@ -96,6 +96,7 @@ const Controls = ({
   previousSong,
   cancionPuesta,
   ListaCancionesPrueba,
+  reproduciendo,
 }) => {
   const classes = useStyles();
   return (
