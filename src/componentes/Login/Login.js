@@ -11,19 +11,15 @@ export const Login = (props) => {
   const entrar = async (username, password) => {
     const credencials = { user: username, pass: password };
 
-    const resp = await fetch(
-      "https://myrythm.herokuapp.com/usuario/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(credencials),
-      }
-    );
+    const resp = await fetch("https://myrythm.herokuapp.com/usuario/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(credencials),
+    });
 
     if (resp.ok) {
-      debugger
       setError(false);
       const { token } = await resp.json();
       localStorage.setItem("token", token);
@@ -35,13 +31,10 @@ export const Login = (props) => {
     }
   };
 
-
   const history = useHistory();
   useEffect(() => {
-    debugger;
-    if (login) history.push("/")
-  }
-    , [history, login]);
+    if (login) history.push("/");
+  }, [history, login]);
 
   return (
     <>
@@ -57,7 +50,8 @@ export const Login = (props) => {
               id="username"
               required
               value={username}
-              onChange={(e) => setUsername(e.target.value)} />
+              onChange={(e) => setUsername(e.target.value)}
+            />
             <div className="form-group">
               <p></p>
               <label htmlFor="password">Contraseña:</label>
@@ -91,7 +85,7 @@ export const Login = (props) => {
               >
                 Iniciar Sesión
               </button>
-              {error && <p className= "error">Datos incorrectos</p>}
+              {error && <p className="error">Datos incorrectos</p>}
             </div>
             <hr className="linea-divisoria"></hr>
             <div className="form-group">
@@ -105,7 +99,7 @@ export const Login = (props) => {
             <div className="boton-login">
               <button
                 className="btn-primary btn-lg "
-              //onClick={cambiarARegister}
+                //onClick={cambiarARegister}
               >
                 {" "}
                 Registrarme <i className="icon-logo"></i>

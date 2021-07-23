@@ -4,10 +4,8 @@ import "./Perfil.css";
 import monotinder from "../../img/monoTinder.png";
 import { useHistory } from "react-router-dom";
 export const Perfil = () => {
-  const token = "jwt token";
-  const { usuario } = jwt_decode(
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjYwZjE0MWIwNzUyYjI2NWE1NTUyNGFiYSIsInVzZXJuYW1lIjoiaXZhbiIsImdlbmVyb3NQcmVmZXJpZG9zIjpbeyJfaWQiOiI2MGYxM2UzZDc1MmIyNjVhNTU1MjRhOGMiLCJub21icmUiOiJNZXRhbGNvcmUifSx7Il9pZCI6IjYwZjEzZTRjNzUyYjI2NWE1NTUyNGE4ZCIsIm5vbWJyZSI6IlBvcCJ9LHsiX2lkIjoiNjBmMTNlNWE3NTJiMjY1YTU1NTI0YThlIiwibm9tYnJlIjoiUmVrZXRvbiJ9XSwidXJsRm90byI6InRvQmVTZXR0ZWQiLCJsb2NhbGl6YWNpb24iOnsiX2lkIjoiNjBmMTU5ODU3NTJiMjY1YTU1NTI0YjgwIiwibm9tYnJlIjoiQmFyY2Vsb25hIn0sImVtYWlsIjoiaXZhbmppbWx1cW1hbGxvcmNhQGdtYWlsLmNvbSJ9LCJpYXQiOjE2MjcwMjc3NTIsImV4cCI6MTYyOTYxOTc1Mn0.Ju9yexIpmpx5MmpCpQ9safgR17pOYEAd4aFR2GnWoWo"
-  );
+  const token = localStorage.getItem("token");
+  const { usuario } = jwt_decode(token);
   debugger;
   const history = useHistory();
 
@@ -45,7 +43,9 @@ export const Perfil = () => {
                 {usuario.generosPreferidos.map((genero) => {
                   return (
                     <li className="elecionGenero col-2">
-                      <p className="generoCancion row"><strong>{genero.nombre}</strong></p>
+                      <p className="generoCancion row">
+                        <strong>{genero.nombre}</strong>
+                      </p>
                     </li>
                   );
                 })}
