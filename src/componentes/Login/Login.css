@@ -60,4 +60,8 @@ ul,li
 .boton-login{
   text-align: center;
 }
-
+.error{
+  color: #ffffff;
+  align-items: center;
+  text-align: center;
+}

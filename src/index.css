@@ -161,3 +161,8 @@ li {
   background-image: url("img/favicon.ico");
   position: absolute;
 }
+.error{
+  color: #ffffff;
+  align-items: center;
+  text-align: center;
+}

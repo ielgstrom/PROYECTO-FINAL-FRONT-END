@@ -8,13 +8,6 @@ export const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const history = useHistory();
-  useEffect(() => {
-    debugger;
-    if (login) history.push("/")
-  }
-    , [history, login]);
-
   const entrar = async (username, password) => {
     const credencials = { user: username, pass: password };
 
@@ -43,6 +36,12 @@ export const Login = (props) => {
   };
 
 
+  const history = useHistory();
+  useEffect(() => {
+    debugger;
+    if (login) history.push("/")
+  }
+    , [history, login]);
 
   return (
     <>
@@ -92,7 +91,7 @@ export const Login = (props) => {
               >
                 Iniciar Sesión
               </button>
-              {error && <p>Error d'autentificació</p>}
+              {error && <p className= "error">Datos incorrectos</p>}
             </div>
             <hr className="linea-divisoria"></hr>
             <div className="form-group">
