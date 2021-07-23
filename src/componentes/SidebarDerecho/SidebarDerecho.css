@@ -3,3 +3,8 @@
   height: calc(100vh - 256px);
   margin-top: 10px;
 }
+.btnAmigosMatches {
+  display: inline;
+  margin-left: 11px;
+  margin-right: 5px;
+}

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import ListaAmigos from "../ListaAmigos/ListaAmigos";
 import "./SidebarDerecho.css";
+import { useState } from "react";
+import ListaMatches from "../ListaMatches/ListaMatches";
 
 export const SidebarDerecho = () => {
   const Amiguis = [
@@ -21,6 +23,10 @@ export const SidebarDerecho = () => {
     },
     { nombre: "Luis XVI" },
   ];
+  const [verPersonas, setVerPersonas] = useState(true);
+  const cambiarvista = () => {
+    setVerPersonas(!verPersonas);
+  };
   return (
     <>
       <aside className="section ListaAmigos">
@@ -37,8 +43,26 @@ export const SidebarDerecho = () => {
             placeholder="Buscar Amiguis"
           ></input>
         </form>
+        <button
+          className="btn btn-primary btnBuscar btnAmigosMatches"
+          type="button"
+          onClick={cambiarvista}
+          disabled={verPersonas}
+        >
+          Amigos
+        </button>
+        <button
+          className="btn btn-primary btnBuscar btnAmigosMatches"
+          type="button"
+          onClick={cambiarvista}
+          disabled={!verPersonas}
+        >
+          Matches
+        </button>
+
         <div className="lorem3">
-          <ListaAmigos ListaAmiguis={Amiguis} />
+          {verPersonas && <ListaAmigos />}
+          {!verPersonas && <ListaMatches />}
         </div>
       </aside>
     </>
