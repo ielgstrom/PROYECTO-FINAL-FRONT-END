@@ -2,15 +2,16 @@ import { useState, useCallback, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import "./CancionesFavoritas.css";
 import { FaBan, FaPlay, FaTrash } from "react-icons/fa";
-export const CancionesFavoritas = ({ ListaCancionesPrueba }) => {
-  ListaCancionesPrueba = [
-    {
-      urlsong2:
-        "https://soundcloud.com/fiorinien/kate-bush-running-up-that-hill",
-      artista: "Kate Bush",
-      título: "Running Up That Hill",
-    },
-  ];
+export const CancionesFavoritas = () => {
+  // ListaCancionesPrueba = [
+  //   {
+  //     urlsong2:
+  //       "https://soundcloud.com/fiorinien/kate-bush-running-up-that-hill",
+  //     artista: "Kate Bush",
+  //     título: "Running Up That Hill",
+  //   },
+  // ];
+  const [anulador, setAnulador] = useState(false);
   const token = localStorage.getItem("token");
   const decoded = jwt_decode(token);
   const id_persona = decoded.usuario._id;
@@ -33,8 +34,10 @@ export const CancionesFavoritas = ({ ListaCancionesPrueba }) => {
         },
       }
     );
-    const datos = await resp.json();
-    setListaMeGustan(datos);
+    if (resp.ok) {
+      const datos = await resp.json();
+      setListaMeGustan(datos);
+    }
   }, [token]);
 
   useEffect(busquedaMegusta, [busquedaMegusta]);
