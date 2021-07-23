@@ -8,6 +8,8 @@ import CancionesFavoritas from "../CancionesFavoritas/CancionesFavoritas";
 import Perfil from "../Perfil/Perfil";
 import Matches from "../Matches/Matches";
 import Chat from "../Chat/Chat";
+import BusquedaCanciones from "../BusquedaCanciones/BusquedaCanciones";
+import PagInicial from "../PagInicial/PagInicial";
 export const Principal = () => {
   const ListaCancionesPrueba = [
     {
@@ -77,6 +79,12 @@ export const Principal = () => {
                 <Route exact path="/chat">
                   <Chat />
                 </Route>
+                <Route exact path="/busquedaCanciones">
+                  <BusquedaCanciones />
+                </Route>
+                <Route exact path="/">
+                  <PagInicial />
+                </Route>
               </Switch>
               <SidebarDerecho className="ListaAmigos" />
             </Router>
@@ -87,10 +95,10 @@ export const Principal = () => {
           />
         </div>
       </>
-
     </>
   );
 };
+
 export default Principal;
 
 // tarea de hoy, dividir en componentes la componente principal

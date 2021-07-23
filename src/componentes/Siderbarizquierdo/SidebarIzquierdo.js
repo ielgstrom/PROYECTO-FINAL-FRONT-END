@@ -50,23 +50,57 @@ export const SidebarIzquierdo = () => {
   const reproducirLista = (List) => {
     setListaAReproducir(List);
   };
+
+  const [texto, setTexto] = useState("");
+
+  const ponerTexto = (e) => {
+    e.preventDefault();
+    setTexto(e.target.value);
+    // console.log(texto);
+    return texto;
+  };
+  const preventdefaultear = (e) => {
+    if (e.keyCode === 13 || e.code === "Enter") {
+      e.preventDefault();
+    }
+  };
+  const ponerEnter = (e) => {
+    if (e.keyCode === 13 || e.code === "Enter") {
+      e.preventDefault();
+    }
+  };
   return (
     <>
       <aside className=" section listaCanciones">
-        <form className=" d-flex flex-row">
-          <input
-            type="text"
-            className="form-control form-control-md buscadorMusica"
-            placeholder="Buscar Musica"
-          ></input>
-        </form>
+        <Link
+          to={{
+            pathname: "/busquedaCanciones",
+            state: { texto },
+          }}
+          onClick={preventdefaultear}
+          onKeyPress={ponerEnter}
+          onSubmit={preventdefaultear}
+        >
+          <form className=" d-flex flex-row">
+            <input
+              type="text"
+              className="form-control form-control-md buscadorMusica"
+              placeholder="Buscar Musica"
+              value={texto}
+              onChange={ponerTexto}
+              onKeyPress={ponerEnter}
+              onSubmit={preventdefaultear}
+            ></input>
+            <FaSearch className="iconobuscar" />
+          </form>
+        </Link>
         <Link
           to="/cancionesFavoritas"
           type="button"
           className="btnBuscar btn btn-primary"
           onClick={viewCancionesFavoritas}
         >
-          Canciones favoritas
+          Favoritas
         </Link>
 
         <h3 className="historialTitulo">Historial</h3>
