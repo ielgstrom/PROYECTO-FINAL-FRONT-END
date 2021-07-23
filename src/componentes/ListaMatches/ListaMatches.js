@@ -9,8 +9,7 @@ export const ListaMatches = () => {
 
   const [Matches, setMatches] = useState([]);
   const listarMatches = useCallback(async () => {
-    console.log("he empezado a buscar");
-
+    console.log("ugh");
     if (!token) {
       console.log("No hay token");
       return;
@@ -27,14 +26,13 @@ export const ListaMatches = () => {
     );
     const datos = await resp.json();
     setMatches(datos);
-    console.log(Matches);
-  }, [Matches, token]);
+  }, [token]);
 
-  useEffect(() => listarMatches(), [listarMatches]);
+  useEffect(listarMatches, [listarMatches]);
   return (
     <>
       {Matches.map((elemento) => (
-        <div className="AmigoIndiv">
+        <div key={elemento._id} className="AmigoIndiv">
           <div className="nombreAmigui">{elemento.username}</div>
           <Link to="/chat">
             <FaComments className="IconoMensaje" />
