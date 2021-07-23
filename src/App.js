@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./componentes/Login/Login";
 import Register from "./componentes/Register/Register";
-import RutaProtegida from "./componentes/RutaProtegida/RutaProtegida"
+import RutaProtegida from "./componentes/RutaProtegida/RutaProtegida";
 import Reproductor from "./componentes/Reproductor/Reproductor";
 import SidebarIzquierdo from "./componentes/Siderbarizquierdo/SidebarIzquierdo";
 import SidebarDerecho from "./componentes/SidebarDerecho/SidebarDerecho";
@@ -65,24 +65,22 @@ function App() {
       <div className="d-flex flex-column">
         <div className="d-flex  align-items-stretch paginaPrincipal">
           <Router className="c">
-          {!login ||  <SidebarIzquierdo className="listaCanciones" />}
+            {!login || <SidebarIzquierdo className="listaCanciones" />}
             <Switch className="header Main">
-
               <Route exact path="/">
-
                 <RutaProtegida login={login}>
-                <Principal />
+                  <Principal />
                 </RutaProtegida>
               </Route>
 
               <Route path="/login" exact>
-                <Login login={login} setLogin={setLogin}/>
+                <Login login={login} setLogin={setLogin} />
               </Route>
 
               <Route exact path="/perfil">
                 <RutaProtegida login={login}>
-                <Perfil />
-                  </RutaProtegida>
+                  <Perfil />
+                </RutaProtegida>
               </Route>
 
               <Route exact path="/matches">
@@ -96,14 +94,19 @@ function App() {
               <Route exact path="/chat">
                 <Chat />
               </Route>
+              <Route exact path="/">
+                <Principal />
+              </Route>
             </Switch>
             {!login || <SidebarDerecho className="ListaAmigos" />}
           </Router>
         </div>
-        {!login ||<Reproductor
-          ListaCancionesPrueba={ListaCancionesPrueba}
-          className="barraReproduccion barraDeReproduccion"
-        />}
+        {!login || (
+          <Reproductor
+            ListaCancionesPrueba={ListaCancionesPrueba}
+            className="barraReproduccion barraDeReproduccion"
+          />
+        )}
       </div>
     </>
   );
