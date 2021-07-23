@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Login.css";
 
 export const Login = (props) => {
-  const { setLogin } = props;
+  const { login, setLogin } = props;
   const [error, setError] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const history = useHistory();
+  useEffect(() => {
+    debugger;
+    if (login) history.push("/")
+  }
+    , [history, login]);
+
   const entrar = async (username, password) => {
-    const credencials = { user:username, pass: password};
+    const credencials = { user: username, pass: password };
+
     const resp = await fetch(
       "https://myrythm.herokuapp.com/usuario/login",
       {
@@ -19,7 +28,9 @@ export const Login = (props) => {
         body: JSON.stringify(credencials),
       }
     );
+
     if (resp.ok) {
+      debugger
       setError(false);
       const { token } = await resp.json();
       localStorage.setItem("token", token);
@@ -30,6 +41,7 @@ export const Login = (props) => {
       setLogin(false);
     }
   };
+
 
 
   return (
@@ -59,7 +71,7 @@ export const Login = (props) => {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                 />
+              />
             </div>
             <div className="form-group">
               <label
@@ -94,7 +106,7 @@ export const Login = (props) => {
             <div className="boton-login">
               <button
                 className="btn-primary btn-lg "
-              /*onClick={cambiarARegister}*/
+              //onClick={cambiarARegister}
               >
                 {" "}
                 Registrarme <i className="icon-logo"></i>
