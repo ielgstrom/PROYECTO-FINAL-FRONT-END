@@ -1,6 +1,26 @@
+import { useState } from "react";
 import { FaComments, FaCog, FaTimes, FaHeart } from "react-icons/fa";
 import "./Matches.css";
 export const Matches = () => {
+  const [match, setMatch] = useState(true);
+  const [datosMatch, setDatosMatch] = useState({
+    nombrePareja: "",
+    imagenPareja: "",
+  });
+  const nextMatch = async (e) => {
+    e.preventDefault();
+    const datos = new FormData();
+    datos.append("imagen", datosMatch.imagenPareja);
+    datos.append("nombre", datosMatch.nombrePareja);
+    const resp = await fetch("http://localhost:3000/matches", {
+      method: "GET",
+      body: datos,
+    });
+    if (resp.ok) {
+      return setMatch(false);
+    }
+    console.log("No hay pareja pa´ ");
+  };
   return (
     <>
       <div className=" header Main">
@@ -38,12 +58,12 @@ export const Matches = () => {
           <ul className="row botones list-unstyled">
             <li className="col-6">
               <button className="boton">
-                <FaTimes className="rechazar" />
+                <FaTimes className="rechazar" onClick={nextMatch}/>
               </button>
             </li>
             <li className="col-6">
-              <button className="boton">
-                <FaHeart className="corazon" />
+              <button className="boton" >
+                <FaHeart className="corazon" onClick={nextMatch} />
               </button>
             </li>
           </ul>
@@ -53,4 +73,6 @@ export const Matches = () => {
   );
 };
 export default Matches;
+
+
 //se tiene que llamar en PagPrincipal
