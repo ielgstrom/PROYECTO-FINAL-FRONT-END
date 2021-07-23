@@ -103,9 +103,9 @@ export const SidebarIzquierdo = () => {
           Favoritas
         </Link>
 
-        <h3 className="historialTitulo">Historial</h3>
+        <h3 className="historialTitulo">Escuchadas</h3>
         <div className="lorem2">
-          <HistorialSidebar historial={ListaCancionesPrueba} />
+          <HistorialSidebar />
         </div>
       </aside>
     </>
