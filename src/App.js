@@ -11,6 +11,7 @@ import Perfil from "./componentes/Perfil/Perfil";
 import Matches from "./componentes/Matches/Matches";
 import Principal from "./componentes/Principal/Principal";
 import Chat from "./componentes/Chat/Chat";
+import BusquedaCanciones from "./componentes/BusquedaCanciones/BusquedaCanciones";
 function App() {
   const ListaCancionesPrueba = [
     {
@@ -93,6 +94,9 @@ function App() {
               </Route>
               <Route exact path="/chat">
                 <Chat />
+              </Route>
+              <Route exact path="/busquedaCanciones">
+                <BusquedaCanciones />
               </Route>
               <Route exact path="/">
                 <Principal />
