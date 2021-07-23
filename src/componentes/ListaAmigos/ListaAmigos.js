@@ -10,8 +10,6 @@ export const ListaAmigos = () => {
 
   const [amigos, setAmigos] = useState([]);
   const listarAmigos = useCallback(async () => {
-    console.log("he empezado a buscar");
-
     if (!token) {
       console.log("No hay token");
       return;
@@ -28,14 +26,13 @@ export const ListaAmigos = () => {
     );
     const datos = await resp.json();
     setAmigos(datos);
-    console.log(amigos);
-  }, [amigos, token]);
+  }, [token]);
 
-  useEffect(() => listarAmigos(), [listarAmigos]);
+  useEffect(listarAmigos, [listarAmigos, token, amigos]);
   return (
     <>
       {amigos.map((elemento) => (
-        <div className="AmigoIndiv">
+        <div key={elemento._id} className="AmigoIndiv">
           <div className="nombreAmigui">{elemento.username}</div>
           <Link to="/chat">
             <FaComments className="IconoMensaje" />

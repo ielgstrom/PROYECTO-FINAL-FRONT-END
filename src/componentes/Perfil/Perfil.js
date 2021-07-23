@@ -11,7 +11,7 @@ export const Perfil = () => {
 
   return (
     <>
-      <div className="contenedorTotal">
+      <div className="contenedorTotal Main header">
         <div className="row contenedorPrincipal">
           <div className="col-10 informacionesPerfil">
             <div className="imagenPerfil row ">
