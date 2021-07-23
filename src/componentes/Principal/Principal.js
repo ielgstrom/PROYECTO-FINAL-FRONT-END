@@ -9,6 +9,7 @@ import Perfil from "../Perfil/Perfil";
 import Matches from "../Matches/Matches";
 import Chat from "../Chat/Chat";
 import BusquedaCanciones from "../BusquedaCanciones/BusquedaCanciones";
+import PagInicial from "../PagInicial/PagInicial";
 export const Principal = () => {
   const ListaCancionesPrueba = [
     {
@@ -80,6 +81,9 @@ export const Principal = () => {
                 </Route>
                 <Route exact path="/busquedaCanciones">
                   <BusquedaCanciones />
+                </Route>
+                <Route exact path="/">
+                  <PagInicial />
                 </Route>
               </Switch>
               <SidebarDerecho className="ListaAmigos" />

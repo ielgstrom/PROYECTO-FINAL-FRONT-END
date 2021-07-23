@@ -59,6 +59,16 @@ export const SidebarIzquierdo = () => {
     // console.log(texto);
     return texto;
   };
+  const preventdefaultear = (e) => {
+    if (e.keyCode === 13 || e.code === "Enter") {
+      e.preventDefault();
+    }
+  };
+  const ponerEnter = (e) => {
+    if (e.keyCode === 13 || e.code === "Enter") {
+      e.preventDefault();
+    }
+  };
   return (
     <>
       <aside className=" section listaCanciones">
@@ -67,6 +77,9 @@ export const SidebarIzquierdo = () => {
             pathname: "/busquedaCanciones",
             state: { texto },
           }}
+          onClick={preventdefaultear}
+          onKeyPress={ponerEnter}
+          onSubmit={preventdefaultear}
         >
           <form className=" d-flex flex-row">
             <input
@@ -75,6 +88,8 @@ export const SidebarIzquierdo = () => {
               placeholder="Buscar Musica"
               value={texto}
               onChange={ponerTexto}
+              onKeyPress={ponerEnter}
+              onSubmit={preventdefaultear}
             ></input>
             <FaSearch className="iconobuscar" />
           </form>
