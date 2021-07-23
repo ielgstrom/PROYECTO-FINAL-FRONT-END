@@ -6,7 +6,7 @@ import {
   Redirect,
   BrowserRouter as Router,
 } from "react-router-dom";
-import { Principal } from "./componentes/Principal/Principal";
+//import { Principal } from "./componentes/Principal/Principal";
 import { Login } from "./componentes/Login/Login";
 function App() {
 

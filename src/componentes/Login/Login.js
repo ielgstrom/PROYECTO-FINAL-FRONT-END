@@ -8,11 +8,11 @@ export const Login = (props) => {
   const [password, setPassword] = useState("");
 
   const entrar = async (username, password) => {
-    const credencials = { username, password };
+    const credencials = { user:username, pass: password};
     const resp = await fetch(
       "https://myrythm.herokuapp.com/usuario/login",
       {
-        method: "PUT",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
