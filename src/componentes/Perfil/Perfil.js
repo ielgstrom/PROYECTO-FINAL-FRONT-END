@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 export const Perfil = () => {
   const token = localStorage.getItem("token");
   const { usuario } = jwt_decode(token);
-  debugger;
   const history = useHistory();
 
   return (
