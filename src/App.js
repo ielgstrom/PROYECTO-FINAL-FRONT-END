@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Login } from "./componentes/Login/Login";
-import { Logout } from "./Logout/Logout";
-import { Register } from "./componentes/Register/Register";
+import Login from "./componentes/Login/Login";
+import Logout from "./componentes/Logout/Logout";
+import Register from "./componentes/Register/Register";
 import { AuthContextProvider } from "./contextos/AuthContextProvider";
 import { NotFoundPagina } from "./paginas/NotFoundPagina";
 import RutaProtegida from "./componentes/RutaProtegida/RutaProtegida";
