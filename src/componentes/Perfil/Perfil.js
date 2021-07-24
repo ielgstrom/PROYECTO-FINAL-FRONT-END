@@ -3,10 +3,14 @@ import { useState, useEffect } from "react";
 import "./Perfil.css";
 import monotinder from "../../img/monoTinder.png";
 import { useHistory } from "react-router-dom";
-export const Perfil = () => {
+export const Perfil = (props) => {
+  const { login, setLogin } = props;
   const token = localStorage.getItem("token");
   const { usuario } = jwt_decode(token);
   const history = useHistory();
+  useEffect(() => {
+    if (login) history.push("/");
+  }, [history, login]);
 
   return (
     <>
@@ -83,7 +87,7 @@ export const Perfil = () => {
             </div> */}
           </div>
           <div className="contenedorBotones">
-            <button className="botones2" onClick={() => history.push("/")}>
+            <button className="botones2" onClick={() => history.push("/logout")}>
               <strong>Cerrar Sessión</strong>
             </button>
             <button className="botones2">
