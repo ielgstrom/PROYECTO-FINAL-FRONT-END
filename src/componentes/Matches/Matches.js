@@ -107,7 +107,7 @@ export const Matches = () => {
   };
   return (
     <>
-      <div className=" header Main">
+      <div className=" header Main scrollable">
         <div className="contenedorMatches">
           {typeof personaMatch !== "undefined" || (
             <h1 className="row">nada que mostrar</h1>

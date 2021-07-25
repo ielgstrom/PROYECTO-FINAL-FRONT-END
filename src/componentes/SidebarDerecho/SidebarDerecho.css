@@ -1,6 +1,6 @@
 .lorem3 {
   overflow-y: scroll;
-  height: calc(100vh - 256px);
+  height: calc(100vh - 400px);
   margin-top: 10px;
 }
 .btnAmigosMatches {
