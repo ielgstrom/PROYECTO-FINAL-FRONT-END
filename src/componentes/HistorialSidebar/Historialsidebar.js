@@ -24,8 +24,10 @@ export const HistorialSidebar = () => {
         },
       }
     );
-    const datos = await resp.json();
-    setListaHistorial(datos);
+    if (resp.ok) {
+      const datos = await resp.json();
+      setListaHistorial(datos);
+    }
   }, [id_persona, token]);
 
   useEffect(busquedaHistorial, [busquedaHistorial]);
