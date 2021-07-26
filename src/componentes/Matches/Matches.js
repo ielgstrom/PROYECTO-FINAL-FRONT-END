@@ -142,7 +142,7 @@ export const Matches = () => {
                   </li>
                   <li className="row">
                     <p className="col-12 infoPareja">
-                      {personaMatch.localizacion}
+                      {personaMatch.localizacion.nombre}
                     </p>
                   </li>
                 </ul>
