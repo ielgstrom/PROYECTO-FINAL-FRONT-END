@@ -64,8 +64,8 @@ function App() {
                 </Route>
 
                 <Route exact path="/perfil">
-                  <RutaProtegida login={login}>
-                    <Perfil />
+                  <RutaProtegida login={login} >
+                    <Perfil login={login} setLogin={setLogin}/>
                   </RutaProtegida>
                 </Route>
 

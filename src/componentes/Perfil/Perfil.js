@@ -1,5 +1,6 @@
 import jwt_decode from "jwt-decode";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { desloguearUsuario } from "../../contextos/AuthContextProvider";
 import "./Perfil.css";
 import monotinder from "../../img/hombreproyecto.jpg";
 import { useHistory } from "react-router-dom";
@@ -7,10 +8,16 @@ export const Perfil = (props) => {
   const { login, setLogin } = props;
   const token = localStorage.getItem("token");
   const { usuario } = jwt_decode(token);
-  const history = useHistory();
+/*   const history = useHistory();
   useEffect(() => {
     if (login) history.push("/");
-  }, [history, login]);
+  }, [history, login]); */
+
+  const desloguearUsuario = () => {
+    //localStorage.removeItem("token");
+    localStorage.setItem("login", false);
+    setLogin(false);
+  };
 
   return (
     <>
@@ -51,11 +58,8 @@ export const Perfil = (props) => {
               })}
             </ul>
           </div>
-          <div className="row contenedorBotones">
-            <button
-              className="botones2 " 
-              onClick={() => history.push("/logout")}
-            >
+          <div className="contenedorBotones">
+            <button className="botones2" onClick={desloguearUsuario}>
               <strong>Cerrar Sessión</strong>
             </button>
             <button className="botones2 ">
