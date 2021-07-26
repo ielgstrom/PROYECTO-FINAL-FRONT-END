@@ -3,10 +3,8 @@
   height: calc(100vh - 90px);
 }
 .informacionesPerfil {
-  background-color: #e5e5e5;
-
+  background-color: #252526;
   margin: 0;
-  border: 5px solid #49a6f7;
 }
 .contenedorPrincipal {
   display: flex;
@@ -21,19 +19,19 @@ p {
   margin-left: -70px;
   margin-top: 8px;
   font-size: 15px;
-  color: #000;
+  color: #49a6f7;
 }
 h1 {
-  color: #000;
+  color: #49a6f7;
 }
 h4 {
-  color: #000;
+  color: #49a6f7;
 }
 .linea {
   margin-left: -10px;
   margin-bottom: -10px;
   margin-top: -15px;
-  color: #000;
+  color: #49a6f7;
   size: 2ch;
 }
 .infoUsuario {
@@ -46,11 +44,12 @@ h4 {
 }
 .imagenPerfil {
   margin-left: 50px;
+
 }
 .contenedorImagen {
-  width: 300px;
-  height: 127px;
-  margin-left: -50px;
+  height: auto;
+  margin-left: -20px;
+  margin-top: 50px;
 
 }
 .botonGenero {
@@ -65,20 +64,25 @@ h4 {
   margin-top: 10px;
 }
 .generos {
-  color: #000;
+  color: #49a6f7;
   text-align: center;
+  margin-top: 90px;
 }
 .generoCancion {
   margin-top: 30px;
   font-size: 19px;
-  color: black;
+  color: white;
   margin-left: 20px;
+  width: 120px;
+  height: 45px;
 
+
+}
+.contenedorGeneros{
+  margin-left: -95px;
 }
 .elecionGenero {
   margin-left: 100px;
-  width: 90px;
-  height: 90px;
   background-color: #007bff;
   border-radius: 10px;
   margin-top: 30px;
@@ -88,7 +92,7 @@ h4 {
   font-size: 24px;
 }
 .Ciudad{
-    margin-left: -30px;
+    margin-left: -95px;
     font-size: 24px;
 }
 .contenedorTitulos {
@@ -122,6 +126,10 @@ h4 {
   margin-left: -80px;
 }
 .nombre{
-  margin-left: 25px;
+  margin-left: 20px;
   font-size: 30px;
+}
+.contenedorNombre{
+  margin-left: 180px;
+  margin-top: -130px;
 }
