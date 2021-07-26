@@ -16,49 +16,49 @@ export const Perfil = (props) => {
     <>
       <div className="contenedorTotal Main header">
         <div className="row contenedorPrincipal">
-            <div className="imagenPerfil row">
-              <img
-                className="col-3 contenedorImagen"
-                src={monotinder}
-                alt="Mono"
-              />
-              <ul className="list-unstyled col-9 contenedorNombre">
-                <li>
-                  <p className="nombre">{usuario.username}</p>
-                </li>
-                <li>
-                  <p className="nombre">{usuario.username}</p>
-                </li>
-              </ul>
-            </div>
-            <ul className="list-unstyled row">
-              <li className="col-12">
-                <p className="Ciudad">{usuario.localizacion.nombre}</p>
+          <div className="imagenPerfil row">
+            <img
+              className="col-3 contenedorImagen"
+              src={monotinder}
+              alt="Mono"
+            />
+            <ul className="list-unstyled col-9 contenedorNombre">
+              <li>
+                <p className="nombre">{usuario.username}</p>
+              </li>
+              <li>
+                <p className="nombre">{usuario.username}</p>
               </li>
             </ul>
+          </div>
+          <ul className="list-unstyled row">
+            <li className="col-12">
+              <p className="Ciudad">{usuario.localizacion.nombre}</p>
+            </li>
+          </ul>
 
-            <div>
-              <h2 className="generos">Generos favoritos</h2>
-              <ul className="list-unstyled contenedorGeneros row">
-                {usuario.generosPreferidos.map((genero) => {
-                  return (
-                    <li className="elecionGenero">
-                      <p className="generoCancion  col-4">
-                        <strong>{genero.nombre}</strong>
-                      </p>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          <div className="contenedorBotones">
+          <div>
+            <h2 className="generos">Generos favoritos</h2>
+            <ul className="list-unstyled contenedorGeneros row">
+              {usuario.generosPreferidos.map((genero) => {
+                return (
+                  <li className="elecionGenero">
+                    <p className="generoCancion  col-4">
+                      <strong>{genero.nombre}</strong>
+                    </p>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="row contenedorBotones">
             <button
-              className="botones2"
+              className="botones2 " 
               onClick={() => history.push("/logout")}
             >
               <strong>Cerrar Sessión</strong>
             </button>
-            <button className="botones2">
+            <button className="botones2 ">
               <strong>Eliminar Cuenta</strong>
             </button>
           </div>
