@@ -4,7 +4,7 @@ import { AuthContext } from "./AuthContext";
 
 export const AuthContextProvider = (props) => {
   const token = localStorage.getItem("token");
-  const [logueado, setLogueado] = useState(!!token);
+  const [login, setLogin] = useState(!!token);
   const history = useHistory();
   useEffect(() => {
     if (!token) {
@@ -13,15 +13,16 @@ export const AuthContextProvider = (props) => {
   }, [token, history]);
   const { children } = props;
   const loguearUsuario = () => {
-    setLogueado(true);
+    setLogin(true);
   };
   const desloguearUsuario = useCallback(() => {
-    localStorage.removeItem("token");
-    setLogueado(false);
-  }, []);
+    localStorage.removeItem("token", token);
+    localStorage.setItem("login", false);
+    setLogin(false);
+  }, [token]);
   return (
     <AuthContext.Provider
-      value={{ logueado, token, loguearUsuario, desloguearUsuario }}
+      value={{ login, token, loguearUsuario, desloguearUsuario }}
     >
       {children}
     </AuthContext.Provider>
