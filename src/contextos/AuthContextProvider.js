@@ -16,10 +16,10 @@ export const AuthContextProvider = (props) => {
     setLogin(true);
   };
   const desloguearUsuario = useCallback(() => {
-    localStorage.removeItem("token", token);
+    localStorage.removeItem("token");
     localStorage.setItem("login", false);
     setLogin(false);
-  }, [token]);
+  }, []);
   return (
     <AuthContext.Provider
       value={{ login, token, loguearUsuario, desloguearUsuario }}
