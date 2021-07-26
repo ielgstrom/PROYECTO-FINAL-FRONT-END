@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaComments, FaCog, FaTimes, FaHeart } from "react-icons/fa";
+import { FaComments, FaCog, FaTimes, FaHeart, FaSearch } from "react-icons/fa";
 import jwt_decode from "jwt-decode";
 import "./Matches.css";
 import { useCallback } from "react";
@@ -110,7 +110,10 @@ export const Matches = () => {
       <div className=" header Main scrollable">
         <div className="contenedorMatches">
           {typeof personaMatch !== "undefined" || (
-            <h1 className="row">nada que mostrar</h1>
+            <div className="row mensajeMatches">
+              <h1 className="mensajeMatches2 col-11">En busqueda de matches...</h1>
+              <FaSearch className="busqueda"/>
+            </div>
           )}
 
           {!personaMatch || (
