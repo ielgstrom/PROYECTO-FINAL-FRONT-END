@@ -1,7 +1,7 @@
 import jwt_decode from "jwt-decode";
 import { useState, useEffect } from "react";
 import "./Perfil.css";
-import monotinder from "../../img/monoTinder.png";
+import monotinder from "../../img/hombreproyecto.jpg";
 import { useHistory } from "react-router-dom";
 export const Perfil = (props) => {
   const { login, setLogin } = props;
@@ -16,37 +16,34 @@ export const Perfil = (props) => {
     <>
       <div className="contenedorTotal Main header">
         <div className="row contenedorPrincipal">
-          <div className="col-10 informacionesPerfil">
-            <div className="imagenPerfil row ">
+            <div className="imagenPerfil row">
               <img
-                className="col-2 contenedorImagen"
+                className="col-3 contenedorImagen"
                 src={monotinder}
                 alt="Mono"
-                height={200}
-                width={200}
               />
-
-              <ul className="list-unstyled col-10 contenedorNombre">
+              <ul className="list-unstyled col-9 contenedorNombre">
                 <li>
                   <p className="nombre">{usuario.username}</p>
                 </li>
                 <li>
                   <p className="nombre">{usuario.username}</p>
-                </li>
-              </ul>
-              <ul className="list-unstyled row">
-                <li className="col-12">
-                  <p className="Ciudad">{usuario.localizacion.nombre}</p>
                 </li>
               </ul>
             </div>
+            <ul className="list-unstyled row">
+              <li className="col-12">
+                <p className="Ciudad">{usuario.localizacion.nombre}</p>
+              </li>
+            </ul>
+
             <div>
               <h2 className="generos">Generos favoritos</h2>
-              <ul className="list-unstyled row">
+              <ul className="list-unstyled contenedorGeneros row">
                 {usuario.generosPreferidos.map((genero) => {
                   return (
-                    <li className="elecionGenero col-2">
-                      <p className="generoCancion row">
+                    <li className="elecionGenero">
+                      <p className="generoCancion  col-4">
                         <strong>{genero.nombre}</strong>
                       </p>
                     </li>
@@ -54,40 +51,11 @@ export const Perfil = (props) => {
                 })}
               </ul>
             </div>
-            {/* <div>
-              <h2 className="generos">Ultimas Canciones Escuchadas</h2>
-              <ul className="list-unstyled ultimasCansiones row">
-                <li className="contenedorTitulos col-3 shadow ">
-                  <p className="tituloCancion">titulo cancion</p>
-                  <p className="tituloCancion">fecha</p>
-                </li>
-                <li className="contenedorTitulos col-3 shadow ">
-                  <p className="tituloCancion">titulo cancion</p>
-                  <p className="tituloCancion">fecha</p>
-                </li>
-                <li className="contenedorTitulos col-3 shadow ">
-                  <p className="tituloCancion">titulo cancion</p>
-                  <p className="tituloCancion">fecha</p>
-                </li>
-              </ul>
-              <ul className="list-unstyled row">
-                <li className="contenedorTitulos col-3">
-                  <p className="tituloCancion">titulo cancion</p>
-                  <p className="tituloCancion">fecha</p>
-                </li>
-                <li className="contenedorTitulos col-3">
-                  <p className="tituloCancion">titulo cancion</p>
-                  <p className="tituloCancion">fecha</p>
-                </li>
-                <li className="contenedorTitulos col-3">
-                  <p className="tituloCancion">titulo cancion</p>
-                  <p className="tituloCancion">fecha</p>
-                </li>
-              </ul>
-            </div> */}
-          </div>
           <div className="contenedorBotones">
-            <button className="botones2" onClick={() => history.push("/logout")}>
+            <button
+              className="botones2"
+              onClick={() => history.push("/logout")}
+            >
               <strong>Cerrar Sessión</strong>
             </button>
             <button className="botones2">
