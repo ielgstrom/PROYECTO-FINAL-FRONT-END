@@ -16,53 +16,34 @@ import Principal from "./componentes/Principal/Principal";
 import Chat from "./componentes/Chat/Chat";
 import BusquedaCanciones from "./componentes/BusquedaCanciones/BusquedaCanciones";
 function App() {
-  const ListaCancionesPrueba = [
+  const [ListaCancionesPrueba, setListaCancionesPrueba] = useState([
     {
-      urlsong2:
-        "https://soundcloud.com/theavalanches/interstellar-love-feat-leon",
-      artista: "The Avalanches",
-      título: "Interstelar Love",
+      _id: "60f1401c752b265a55524a99",
+      url: "https://soundcloud.com/parkway-drive/carrion",
+      nombre: "Carrion",
+      artista: {
+        integrantes: [
+          "Winston McCall",
+          "Jeff Ling",
+          "Luke Kilpatrick",
+          "Jia O'Connor",
+          "Ben Gordon",
+        ],
+        _id: "60f13e91752b265a55524a93",
+        nombre: "Parkway Drive",
+        tipo: "Grupo",
+        urlImagen: "toBeSetted",
+      },
+      genero: {
+        _id: "60f13e3d752b265a55524a8c",
+        nombre: "Metalcore",
+      },
     },
-    {
-      urlsong2: "https://soundcloud.com/nationalxball2018/20-seconds",
-      título: "Darkest Hour",
-      artista: "Sevdaliza",
-    },
-    {
-      urlsong2:
-        "https://soundcloud.com/fiorinien/kate-bush-running-up-that-hill",
-      artista: "Kate Bush",
-      título: "Running Up That Hill",
-    },
-    {
-      urlsong2: "https://soundcloud.com/quelle-chris/graphic-bleed-outs-feat",
-      artista: "Quelle Chris",
-      título: "Graphic Bleeds Outs",
-    },
-    {
-      urlsong2: "https://soundcloud.com/kingprincessmusic/pain",
-      artista: "King Princess",
-      título: "Pain",
-    },
-    {
-      urlsong2:
-        "https://soundcloud.com/mariaarnalimarcelbages-music/el-gran-silencio",
-      artista: "Maria Arnal i Marcel Bagés",
-      título: "El gran silencio",
-    },
-    {
-      urlsong2:
-        "https://soundcloud.com/bovalonmusic/sets/yelle-je-taime-encore-rawd",
-      artista: "Yelle",
-      título: "Je t'aime encore",
-    },
-    {
-      urlsong2: "https://soundcloud.com/nathy-peluso/delito",
-      artista: "Nathy Peluso",
-      título: "DELITO",
-    },
-  ];
-
+  ]);
+  const [cancionPuesta, setCancionPuesta] = useState({
+    cancion: ListaCancionesPrueba[0],
+    indice: 0,
+  });
   const [login, setLogin] = useState(false);
   return (
     <>
@@ -100,13 +81,21 @@ function App() {
                 <Route exact path="/cancionesFavoritas">
                   <CancionesFavoritas
                     ListaCancionesPrueba={ListaCancionesPrueba}
+                    setCancionPuesta={setCancionPuesta}
+                    setListaCancionesPrueba={setListaCancionesPrueba}
+                    cancionPuesta={cancionPuesta}
                   />
                 </Route>
                 <Route exact path="/chat">
                   <Chat />
                 </Route>
                 <Route exact path="/busquedaCanciones">
-                  <BusquedaCanciones />
+                  <BusquedaCanciones
+                    ListaCancionesPrueba={ListaCancionesPrueba}
+                    setCancionPuesta={setCancionPuesta}
+                    setListaCancionesPrueba={setListaCancionesPrueba}
+                    cancionPuesta={cancionPuesta}
+                  />
                 </Route>
                 <Route exact path="/">
                   <Principal />
@@ -121,6 +110,8 @@ function App() {
         </div>
         {!login || (
           <Reproductor
+            cancionPuesta={cancionPuesta}
+            setCancionPuesta={setCancionPuesta}
             ListaCancionesPrueba={ListaCancionesPrueba}
             className="barraReproduccion barraDeReproduccion"
           />

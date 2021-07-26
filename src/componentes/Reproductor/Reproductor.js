@@ -3,10 +3,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 import ReactPlayer from "react-player";
-import { IconButton } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
-import Tooltip from "@material-ui/core/Tooltip";
+
 import Controls from "../Controls/Controls";
+import { useCallback } from "react";
 
 const useStyles = makeStyles((theme) => ({
   //   button: {
@@ -35,10 +34,11 @@ const format = (seconds) => {
 
   return `${mm}:${ss}`;
 };
-export const Reproductor = ({ ListaCancionesPrueba }) => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImdlbmVyb3NQcmVmZXJpZG9zIjpbIjYwZjEzZTNkNzUyYjI2NWE1NTUyNGE4YyJdLCJfaWQiOiI2MGYxNDFiMDc1MmIyNjVhNTU1MjRhYmEiLCJ1c2VybmFtZSI6Iml2YW4iLCJwYXNzd29yZCI6ImF5eWJhIiwidXJsRm90byI6InRvQmVTZXR0ZWQiLCJsb2NhbGl6YWNpb24iOiI2MGYxNTk4NTc1MmIyNjVhNTU1MjRiODAiLCJlbWFpbCI6Iml2YW5qaW1sdXFtYWxsb3JjYUBnbWFpbC5jb20ifSwiaWF0IjoxNjI2NjIzODMyLCJleHAiOjE2MjkyMTU4MzJ9.o99nYr7aBfVLrbWTQG3GnMFX80x8qOsvYHO9jczNeS8";
-  // const classes = useStyles();
+export const Reproductor = ({
+  cancionPuesta,
+  setCancionPuesta,
+  ListaCancionesPrueba,
+}) => {
   const [reproduccion, setReproduccion] = useState({
     reproduciendo: true,
     played: 0,
@@ -52,8 +52,6 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
 
   const playerRef = useRef(null);
   const [reverseIcon, setReverseIcon] = useState(true);
-
-  const [cancionPuesta, setCancionPuesta] = useState(ListaCancionesPrueba[0]);
 
   const reproducirOPausar = () => {
     setReproduccion({
@@ -105,34 +103,61 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
     setReproduccion({ ...reproduccion, seeking: false });
     playerRef.current.seekTo(newValue / 100, "fraction");
   };
+  const nextSong = useCallback(
+    (lista) => {
+      console.log(lista);
+      setReproduccion({
+        ...reproduccion,
+        reproduciendo: true,
+      });
+      setReverseIcon(true);
+      // if (lista[lista.length - 1]) {
+      //   setCancionPuesta((cancionPuesta) =>lista[lista.indexOf(cancionPuesta) + 1]);
+      // } else if (lista[lista.length - 1]) {
+      //   setCancionPuesta((cancionPuesta) => lista[0]);
+      // }
+      setCancionPuesta((cancionPuesta) => {
+        if (lista.length === 1) {
+          return {
+            cancion: cancionPuesta.cancion,
+            indice: cancionPuesta.indice,
+          };
+        } else if (lista.length === cancionPuesta.indice)
+          return {
+            cancion: lista[cancionPuesta.indice + 1],
+            indice: cancionPuesta.indice + 1,
+          };
+        else return { cancion: lista[0], indice: cancionPuesta.indice };
+      });
+    },
+    [setCancionPuesta]
+  );
 
-  const nextSong = (lista) => {
-    if (lista[lista.length - 1].urlsong2 !== cancionPuesta.urlsong2) {
-      setCancionPuesta(lista[lista.indexOf(cancionPuesta) + 1]);
-    } else if (lista[lista.length - 1].urlsong2 === cancionPuesta.urlsong2) {
-      setCancionPuesta(lista[0]);
-    }
-  };
-
-  useEffect(() => nextSong(ListaCancionesPrueba), [ListaCancionesPrueba]);
+  useEffect(
+    () => nextSong(ListaCancionesPrueba),
+    [ListaCancionesPrueba, nextSong]
+  );
 
   const previousSong = () => {
-    if (ListaCancionesPrueba[0].urlsong2 !== cancionPuesta.urlsong2) {
+    console.log("previous");
+    debugger;
+    if (ListaCancionesPrueba[0].url !== cancionPuesta.url) {
       setCancionPuesta(
         ListaCancionesPrueba[ListaCancionesPrueba.indexOf(cancionPuesta) - 1]
       );
-    } else if (ListaCancionesPrueba[0].urlsong2 === cancionPuesta.urlsong2) {
+    } else if (ListaCancionesPrueba[0].url === cancionPuesta.cancion.url) {
       setCancionPuesta(ListaCancionesPrueba[ListaCancionesPrueba.length - 1]);
     } else setCancionPuesta(cancionPuesta);
   };
   const unaSolaCancion = () => {
+    debugger;
     if (ListaCancionesPrueba.length !== 1) {
       return false;
     } else if (ListaCancionesPrueba.length === 1) {
       return true;
     }
   };
-  // console.log(ListaCancionesPrueba.length);
+
   const currentTime = playerRef.current
     ? playerRef.current.getCurrentTime()
     : "00:00";
@@ -142,30 +167,35 @@ export const Reproductor = ({ ListaCancionesPrueba }) => {
 
   const elapsedTime = format(currentTime);
   const totalDuration = format(duration);
-  // console.log(unaSolaCancion() && "rojo");
 
-  // const guardarenHistorial = async (idsong) => {
-  //   if (!token) {
-  //     console.log("No hay token");
-  //     return;
-  //   }
-  //   const resp = await fetch(
-  //     `https://myrythm.herokuapp.com/historial/reproducirCancion/${idsong}`,
-  //     {
-  //       method: "GET",
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     }
-  //   );
-  //   const datos = await resp.json();
-  // };
+  const guardarenHistorial = useCallback(async (idsong) => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      console.log("No hay token");
+      return;
+    }
+    const resp = await fetch(
+      `https://myrythm.herokuapp.com/historial/reproducirCancion/${idsong}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const datos = await resp.json();
+  }, []);
+
+  useEffect(
+    () => guardarenHistorial(ListaCancionesPrueba[0]._id),
+    [ListaCancionesPrueba, guardarenHistorial]
+  );
   return (
     <>
       <div maxwidth="md" className="reproductor">
         <ReactPlayer
           ref={playerRef}
-          url={cancionPuesta.urlsong2}
+          url={cancionPuesta.cancion.url}
           className="reproductor2"
           muted={muted}
           playing={reproduciendo}

@@ -3,10 +3,8 @@
   height: calc(100vh - 90px);
 }
 .informacionesPerfil {
-  background-color: #e5e5e5;
-
+  background-color: #252526;
   margin: 0;
-  border: 5px solid #49a6f7;
 }
 .contenedorPrincipal {
   display: flex;
@@ -15,25 +13,26 @@
   padding: 0;
   background-color: #252526;
   height: 90vh;
+  width: 98.4%;
 }
 
 p {
   margin-left: -70px;
   margin-top: 8px;
   font-size: 15px;
-  color: #000;
+  color: #49a6f7;
 }
 h1 {
-  color: #000;
+  color: #49a6f7;
 }
 h4 {
-  color: #000;
+  color: #49a6f7;
 }
 .linea {
   margin-left: -10px;
   margin-bottom: -10px;
   margin-top: -15px;
-  color: #000;
+  color: #49a6f7;
   size: 2ch;
 }
 .infoUsuario {
@@ -46,11 +45,13 @@ h4 {
 }
 .imagenPerfil {
   margin-left: 50px;
+
 }
 .contenedorImagen {
-  width: 300px;
-  height: 127px;
-  margin-left: -50px;
+  height: auto;
+  margin-left: -20px;
+  margin-top: 50px;
+  border-radius: 15%;
 
 }
 .botonGenero {
@@ -65,20 +66,25 @@ h4 {
   margin-top: 10px;
 }
 .generos {
-  color: #000;
+  color: #49a6f7;
   text-align: center;
+  margin-top: 90px;
 }
 .generoCancion {
   margin-top: 30px;
   font-size: 19px;
-  color: black;
+  color: white;
   margin-left: 20px;
+  width: 120px;
+  height: 45px;
 
+
+}
+.contenedorGeneros{
+  margin-left: -95px;
 }
 .elecionGenero {
   margin-left: 100px;
-  width: 90px;
-  height: 90px;
   background-color: #007bff;
   border-radius: 10px;
   margin-top: 30px;
@@ -88,8 +94,9 @@ h4 {
   font-size: 24px;
 }
 .Ciudad{
-    margin-left: -30px;
+    margin-left: -240px;
     font-size: 24px;
+    margin-top: -5px;
 }
 .contenedorTitulos {
   height: 48px;
@@ -114,14 +121,18 @@ h4 {
   margin-left: 20px;
   background-color: #db69af;
   color: white;
-  margin-top: -50px;
-  margin-left: 100px;
+  margin-top: 250px;
+  margin-left: 90px;
 }
 .contenedorBotones {
   margin-top: 60px;
-  margin-left: -80px;
+  margin-left: -470px;
 }
 .nombre{
-  margin-left: 25px;
+  margin-left: 20px;
   font-size: 30px;
+}
+.contenedorNombre{
+  margin-left: 180px;
+  margin-top: -130px;
 }
