@@ -103,8 +103,12 @@ const Controls = ({
     <div className="container-fluid barraReproduccion">
       <div className="row  justify-content-center align-items-center">
         <div className="col-12 col-sm-2 text-center plainText">
-          <div className="row nombreCancion">{cancionPuesta.título}</div>
-          <div className="row Artista">{cancionPuesta.artista}</div>
+          <div className="row nombreCancion">
+            {cancionPuesta.cancion.nombre}
+          </div>
+          <div className="row Artista">
+            {cancionPuesta.cancion.artista.nombre}
+          </div>
         </div>
         {/* <div className="col-sm-1"> */}
         {liked ? (
