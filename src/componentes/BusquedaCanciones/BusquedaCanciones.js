@@ -2,56 +2,62 @@ import { useCallback } from "react";
 import { useState, useEffect } from "react";
 import { FaHeart, FaPlay } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
-// import { texto } from "../Siderbarizquierdo/SidebarIzquierdo";
 import "./BusquedaCanciones.css";
-export const BusquedaCanciones = () => {
+export const BusquedaCanciones = ({
+  ListaCancionesPrueba,
+  setCancionPuesta,
+  cancionPuesta,
+  setListaCancionesPrueba,
+}) => {
   let location = useLocation();
-  const { texto } = location.state;
   const [controladorMenu, setControladorMenu] = useState(true);
-  const [parche, setParche] = useState(false);
-  // useEffect(() => console.log(texto), [texto]);
-  const token = localStorage.getItem("token");
+
   const [listaCancionesBusqueda, setListaCancionesBusqueda] = useState([]);
 
-  const busquedaCancion = useCallback(
-    async (nombrecancion) => {
-      console.log("he empezado a buscar");
+  const busquedaCancion = useCallback(async () => {
+    console.log("he empezado a buscar");
 
-      if (!token) {
-        console.log("No hay token");
-        return;
+    const { texto } = location.state;
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      console.log("No hay token");
+      return;
+    }
+    const resp = await fetch(
+      `https://myrythm.herokuapp.com/cancion/busquedaCancion/${texto}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
+    );
 
-      const resp = await fetch(
-        `https://myrythm.herokuapp.com/cancion/busquedaCancion/${nombrecancion}`,
-        {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      console.log(resp.ok);
-      if (resp.ok) {
-        const datos = await resp.json();
-        setListaCancionesBusqueda(datos);
-        return;
-      } else {
-        console.log("he falseado");
-        setControladorMenu(false);
-        return;
-      }
-    },
-    [token]
-  );
+    if (resp.ok) {
+      const datos = await resp.json();
+      setListaCancionesBusqueda(datos);
 
-  useEffect(() => busquedaCancion(texto), [busquedaCancion, texto]);
+      return;
+    } else if (!resp.ok) {
+      console.log("he falseado");
+      setControladorMenu(false);
+      return;
+    }
+  }, [location.state]);
+
+  useEffect(busquedaCancion, [busquedaCancion]);
 
   let bool = false;
   if (listaCancionesBusqueda[0] !== undefined) {
     bool = true;
   }
-  console.log(`${bool}, ${controladorMenu}`);
+
+  const seleccionarCancion = (elemento) => {
+    debugger;
+    setCancionPuesta({ cancion: elemento, indice: 0 });
+    setListaCancionesPrueba([cancionPuesta]);
+  };
   return (
     <>
       <div className="header Main">
@@ -61,7 +67,10 @@ export const BusquedaCanciones = () => {
           listaCancionesBusqueda.map((cancion) => (
             <div key={cancion._id} className="tituloBusqueda">
               <div className="likesIzquierda">
-                <FaPlay className="PlayLikesButton" />
+                <FaPlay
+                  onClick={() => seleccionarCancion(cancion)}
+                  className="PlayLikesButton"
+                />
                 <div className="PlayTitlesButton">
                   {cancion.nombre}-{cancion.artista.nombre}
                 </div>

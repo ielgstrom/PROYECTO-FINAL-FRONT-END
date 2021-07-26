@@ -2,24 +2,29 @@ import { useState, useCallback, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import "./CancionesFavoritas.css";
 import { FaBan, FaPlay, FaTrash } from "react-icons/fa";
-export const CancionesFavoritas = () => {
+export const CancionesFavoritas = ({
+  ListaCancionesPrueba,
+  setCancionPuesta,
+  cancionPuesta,
+  setListaCancionesPrueba,
+}) => {
   // ListaCancionesPrueba = [
   //   {
-  //     urlsong2:
+  //     url:
   //       "https://soundcloud.com/fiorinien/kate-bush-running-up-that-hill",
   //     artista: "Kate Bush",
   //     título: "Running Up That Hill",
   //   },
   // ];
-  const [anulador, setAnulador] = useState(false);
-  const token = localStorage.getItem("token");
-  const decoded = jwt_decode(token);
-  const id_persona = decoded.usuario._id;
+  // const [anulador, setAnulador] = useState(false);
 
   const [listaMegustan, setListaMeGustan] = useState([]);
   const busquedaMegusta = useCallback(async () => {
     console.log("he empezado a buscar");
 
+    const token = localStorage.getItem("token");
+    const decoded = jwt_decode(token);
+    const id_persona = decoded.usuario._id;
     if (!token) {
       console.log("No hay token");
       return;
@@ -38,18 +43,27 @@ export const CancionesFavoritas = () => {
       const datos = await resp.json();
       setListaMeGustan(datos);
     }
-  }, [token]);
+  }, []);
 
   useEffect(busquedaMegusta, [busquedaMegusta]);
+
+  const seleccionarCancion = (elemento) => {
+    setCancionPuesta({ cancion: elemento, indice: 0 });
+    setListaCancionesPrueba([cancionPuesta]);
+  };
+
   return (
     <>
       <div className="header Main">
         <h2 className="enunciadoBusquedaFavs">LISTA DE CANCIONES FAVORITAS</h2>
         <div className="scrollLikes">
           {listaMegustan.map((elemento) => (
-            <div className="tituloBusqueda">
+            <div key={elemento._id} className="tituloBusqueda">
               <div className="likesIzquierda">
-                <FaPlay className="PlayLikesButton" />
+                <FaPlay
+                  onClick={() => seleccionarCancion(elemento)}
+                  className="PlayLikesButton"
+                />
                 <div className="PlayTitlesButton">
                   {elemento.nombre} - {elemento.artista.nombre}
                 </div>
