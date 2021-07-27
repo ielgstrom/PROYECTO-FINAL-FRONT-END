@@ -5,24 +5,6 @@ import { useState } from "react";
 import ListaMatches from "../ListaMatches/ListaMatches";
 
 export const SidebarDerecho = () => {
-  const Amiguis = [
-    {
-      nombre: "Paquita",
-    },
-    { nombre: "Roberto" },
-    {
-      nombre: "Pepe",
-    },
-    { nombre: "Jandro" },
-    {
-      nombre: "Carlos",
-    },
-    { nombre: "Eva" },
-    {
-      nombre: "Evita",
-    },
-    { nombre: "Luis XVI" },
-  ];
   const [verPersonas, setVerPersonas] = useState(true);
   const cambiarvista = () => {
     setVerPersonas(!verPersonas);
@@ -34,13 +16,13 @@ export const SidebarDerecho = () => {
           Ver perfil
         </Link>
         <Link to="/matches" type="button" className="btn btn-primary btnBuscar">
-          Matches
+          Hacer Match!
         </Link>
         <form className=" d-flex flex-row">
           <input
             type="text"
             className="form-control form-control-md buscadorAmiguis"
-            placeholder="Buscar Amiguis"
+            placeholder="Buscar Amigos"
           ></input>
         </form>
         <button

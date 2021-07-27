@@ -9,8 +9,8 @@
 }
 .futurasParejas {
   width: 290px;
-  height: 290px;
-  background-color: blue;
+  height: 250px;
+  background-color: transparent;
   margin-top: 10px;
   border-radius: 10px;
   margin-right: auto;
@@ -108,18 +108,21 @@
 .scrollable {
   overflow-y: scroll;
 }
-.mensajeMatches{
+.mensajeMatches {
   align-items: center;
 }
-.mensajeMatches2{
+.mensajeMatches2 {
   align-items: center;
   margin-left: 20px;
   margin-top: 220px;
 }
-.busqueda{
+.busqueda {
   color: white;
   margin-left: 130px;
   margin-top: 20px;
   width: 40px;
   height: 40px;
+}
+.imagenMatch {
+  border-radius: 10px;
 }

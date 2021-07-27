@@ -107,12 +107,14 @@ export const Matches = () => {
   };
   return (
     <>
-      <div className=" header Main scrollable">
+      <div className="header Main scrollable">
         <div className="contenedorMatches">
           {typeof personaMatch !== "undefined" || (
             <div className="row mensajeMatches">
-              <h1 className="mensajeMatches2 col-11">En busqueda de matches...</h1>
-              <FaSearch className="busqueda"/>
+              <h1 className="mensajeMatches2 col-11">
+                En busqueda de matches...
+              </h1>
+              <FaSearch className="busqueda" />
             </div>
           )}
 
@@ -135,7 +137,12 @@ export const Matches = () => {
               </ul>
               <div className="contenedorParejas row">
                 <div className="futurasParejas col-10">
-                  <img alt="imagenParejafutura" />
+                  <img
+                    src="perfilBlancopng.png"
+                    alt="imagenParejafutura"
+                    className="imagenMatch"
+                    width="250"
+                  />
                 </div>
                 <ul className="contenedorIformaciones list-unstyled">
                   <li className="row">
