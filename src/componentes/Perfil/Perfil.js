@@ -16,54 +16,85 @@ export const Perfil = (props) => {
 
   return (
     <>
-      <div className="contenedorTotal Main header">
-        <div className="row contenedorPrincipal">
-          <div className="imagenPerfil row">
-            <img
-              className="col-3 contenedorImagen"
-              src={monotinder}
-              alt="Mono"
-            />
-            <ul className="list-unstyled col-9 contenedorNombre">
-              <li>
-                <p className="nombre">{usuario.username}</p>
-              </li>
-              <li>
-                <p className="nombre">{usuario.username}</p>
-              </li>
-            </ul>
-          </div>
-          <ul className="list-unstyled row">
-            <li className="col-12">
-              <p className="Ciudad">{usuario.localizacion.nombre}</p>
-            </li>
-          </ul>
+      <div className="container contenedorTotal Main header">
+        <div className="col contenedorPrincipal">
 
-          <div>
+          {/* <!-- fila 1 columna 1 --> */}
+          <div className="col">
+            <h1 className="nombre"> Hola {usuario.username}</h1>
+          </div>
+          <div className="col">
+            {/* <!-- fila 2 columna 1 --> */}
+            <div className="row">
+              <ul className="list-unstyled">
+                <li>
+                  <p className="Ciudad">{usuario.localizacion.nombre}</p>
+                </li>
+              </ul>
+            </div>
+            {/* <!-- fila 2 columna 2 --> */}
+            <div className="imagenPerfil row">
+              <ul className="list-unstyled">
+                <img
+                  className="contenedorImagen"
+                  src={monotinder}
+                  alt="Mono"
+                  width="200" height="100"
+                />
+              </ul>
+            </div>
+          </div>
+          {/* <!-- fila 3 columna 1 --> */}
+          <div className="col">
             <h2 className="generos">Generos favoritos</h2>
-            <ul className="list-unstyled contenedorGeneros row">
-              {usuario.generosPreferidos.map((genero) => {
-                return (
-                  <li className="elecionGenero">
-                    <p className="generoCancion  col-4">
-                      <strong>{genero.nombre}</strong>
-                    </p>
-                  </li>
-                );
+          </div>
+          <div className="col">
+            {/* <!-- fila 4 y fila 5 columnas 1,2,3,4,5,6 --> */}
+            <div className="row contenedorGeneros">
+              <ul className="list-unstyled ">
+                {usuario.generosPreferidos.map((genero) => {
+                  return (
+                    <div clasName="col">
+                      <div className="row-sm">
+                        <li className="elecionGenero">
+                          <p className="generoCancion  row-4">
+                            <strong>{genero.nombre}</strong>
+                          </p>
+                        </li>
+                      </div>
+
+                      <div clasName="col">
+                        <div className="row-sm">
+                          <li className="elecionGenero">
+                            <p className="generoCancion  row-4">
+                              <strong>{genero.nombre}</strong>
+                            </p>
+                          </li>
+                        </div>
+                      </div>
+                      </div>
+                      );
               })}
-            </ul>
-          </div>
-          <div className="contenedorBotones">
-            <button className="botones2" onClick={desloguearUsuario}>
-              <strong>Cerrar Sessión</strong>
-            </button>
-            <button className="botones2 ">
-              <strong>Eliminar Cuenta</strong>
-            </button>
-          </div>
-        </div>
-      </div>
+              </ul>
+                    </div>
+      {/* <!-- fila 6 columnas 1,2--> */ }
+                  <div className="contenedorBotones row">
+                    <div className="col">
+                      <button className="botones2" onClick={desloguearUsuario}>
+                        <strong>Cerrar Sessión</strong>
+                      </button>
+                    </div>
+
+                    <div className="col">
+                      <button className="botones2 ">
+                        <strong>Eliminar Cuenta</strong>
+                      </button>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+            </div>
     </>
-  );
+            );
 };
-export default Perfil;
+            export default Perfil;
