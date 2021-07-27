@@ -125,7 +125,7 @@ const Controls = ({
           <div className="row justify-content-down text-center">
             <div className="col-12 ">
               <SkipPreviousIcon
-                onClick={previousSong}
+                // onClick={previousSong}
                 className={` ${classes.controlIcons} botonPause`}
               />
               {!reverseIcon && (
@@ -157,7 +157,7 @@ const Controls = ({
                 value={played * 100}
                 onChange={onSeek}
                 onMouseDown={onSeekMouseDown}
-                onChangeComitted={onSeekMouseUp}
+                // onChangeComitted={onSeekMouseUp}
               />
             </div>
             <small className="col-1 tiempoCancion">{totalDuration}</small>

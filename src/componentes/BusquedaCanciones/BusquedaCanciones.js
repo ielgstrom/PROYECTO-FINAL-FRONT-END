@@ -15,8 +15,6 @@ export const BusquedaCanciones = ({
   const [listaCancionesBusqueda, setListaCancionesBusqueda] = useState([]);
 
   const busquedaCancion = useCallback(async () => {
-    console.log("he empezado a buscar");
-
     const { texto } = location.state;
     const token = localStorage.getItem("token");
 
