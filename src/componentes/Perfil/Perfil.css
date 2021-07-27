@@ -23,6 +23,8 @@ li {
 .contenedorTotal {
   overflow-y: scroll;
   height: calc(100vh - 90px);
+  justify-content: space-around;
+  flex-direction: column;
 }
 .informacionesPerfil {
   background-color: #252526;
@@ -36,6 +38,8 @@ li {
   background-color: #252526;
   height: 90vh;
   width: 98.4%;
+  justify-content: space-around;
+  flex-direction: column;
 }
 h1 {
   color: #49a6f7;
@@ -66,8 +70,10 @@ h4 {
 .contenedorImagen {
   height: auto;
   margin-left: -20px;
-  margin-top: 50px;
+  margin-top: -40px;
   border-radius: 15%;
+  flex-direction: column;
+  margin-left: 90px;
 
 }
 .botonGenero {
@@ -83,8 +89,9 @@ h4 {
 }
 .generos {
   color: #49a6f7;
-  text-align: center;
   margin-top: 90px;
+  margin-left: -480px;
+  flex-direction: column;
 }
 .generoCancion {
   margin-top: 30px;
@@ -98,12 +105,24 @@ h4 {
 }
 .contenedorGeneros{
   margin-left: -95px;
+  position: absolute;
+  margin-bottom: 15px;
+  flex-direction: column;
+  margin-top: 250px;
+  margin-left: 90px;
+  overflow: hidden;
+  height: 100px;
+  width: 100px;
+  word-wrap: break-word;
 }
 .elecionGenero {
   margin-left: 100px;
   background-color: #007bff;
   border-radius: 10px;
-  margin-top: 30px;
+  margin-top: 100px;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
 }
 .fecha {
   margin-left: -40px;
@@ -112,6 +131,12 @@ h4 {
 .Ciudad{
     margin-bottom: 30px;
     color: #49a6f7;
+    flex-direction: row;
+    margin-left: 20px;
+    width: 120px;
+    margin-top: -200px;
+    margin-left: 90px;
+
 }
 .contenedorTitulos {
   height: 48px;
@@ -133,20 +158,26 @@ h4 {
   border-radius: 5px;
   width: 200px;
   height: 50px;
-  margin-left: 20px;
   background-color: #db69af;
   color: white;
-  margin-top: 250px;
-  margin-left: 90px;
 }
+.botones3 {
+  border-radius: 5px;
+  width: 200px;
+  height: 50px;
+  background-color: #db69af;
+  color: white;
+}
+
 .contenedorBotones {
-  margin-top: 60px;
-  margin-left: -470px;
+  margin-top: 5px;
+  margin-left: 40px;
+  flex-direction: row;
+  position: absolute;
 }
 .nombre{
-  text-align: center;
-}
-.contenedorNombre{
-  margin-left: 180px;
-  margin-top: -130px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 90px;
+  margin-left: 90px;
 }
