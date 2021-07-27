@@ -9,7 +9,6 @@ export const ListaMatches = () => {
 
   const [Matches, setMatches] = useState([]);
   const listarMatches = useCallback(async () => {
-    console.log("ugh");
     if (!token) {
       console.log("No hay token");
       return;
