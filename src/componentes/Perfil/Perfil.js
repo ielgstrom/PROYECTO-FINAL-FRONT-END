@@ -8,13 +8,8 @@ export const Perfil = (props) => {
   const { login, setLogin } = props;
   const token = localStorage.getItem("token");
   const { usuario } = jwt_decode(token);
-/*   const history = useHistory();
-  useEffect(() => {
-    if (login) history.push("/");
-  }, [history, login]); */
 
   const desloguearUsuario = () => {
-    //localStorage.removeItem("token");
     localStorage.setItem("login", false);
     setLogin(false);
   };
