@@ -27,7 +27,7 @@ export const Perfil = (props) => {
             <div className="row">
               <ul className="list-unstyled">
                 <li>
-                  <p className="Ciudad">{usuario.localizacion.nombre}</p>
+                <p className="Ciudad"> <b>Localización:</b> {usuario.localizacion.nombre}</p>
                 </li>
               </ul>
               </div>
@@ -54,60 +54,17 @@ export const Perfil = (props) => {
                 {usuario.generosPreferidos.map((genero) => {
                   return (
                     <>
-                    <div clasName="col-3">
-                      <div className="row">
-                        <li className="elecionGenero">
-                          <p className="generoCancion col">
-                            <strong>{genero.nombre}</strong>
-                          </p>
-                        </li>
-                      </div>
-                    </div>
-                    <div clasName="col-3">
-                      <div className="row">
-                        <li className="elecionGenero">
-                          <p className="generoCancion  col">
-                            <strong>{genero.nombre}</strong>
-                          </p>
-                        </li>
-                      </div>
-                    </div>
-                    <div clasName="col-3">
-                      <div className="row">
-                        <li className="elecionGenero">
-                          <p className="generoCancion  col">
-                            <strong>{genero.nombre}</strong>
-                          </p>
-                        </li>
-                      </div>
-                    </div>
-                    <div clasName="col-3">
-                      <div className="row">
-                        <li className="elecionGenero">
-                          <p className="generoCancion  col">
-                            <strong>{genero.nombre}</strong>
-                          </p>
-                        </li>
-                      </div>
-                    </div>
-                    <div clasName="col-3">
-                      <div className="row">
-                        <li className="elecionGenero">
-                          <p className="generoCancion  col">
-                            <strong>{genero.nombre}</strong>
-                          </p>
-                        </li>
-                      </div>
-                    </div>
-                    <div clasName="col-3">
-                      <div className="row">
-                        <li className="elecionGenero">
-                          <p className="generoCancion  col">
-                            <strong>{genero.nombre}</strong>
-                          </p>
-                        </li>
-                      </div>
-                    </div>
+                      <ul className="list-unstyled contenedorGeneros row">
+                        {usuario.generosPreferidos.map((genero) => {
+                          return (
+                            <li className="elecionGenero">
+                              <p className="generoCancion  col-4">
+                                <strong>{genero.nombre}</strong>
+                              </p>
+                            </li>
+                          );
+                        })}
+                      </ul>
                     </>
                   );
                 })}
