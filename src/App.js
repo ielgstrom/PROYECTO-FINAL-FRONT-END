@@ -15,6 +15,7 @@ import Matches from "./componentes/Matches/Matches";
 import Principal from "./componentes/Principal/Principal";
 import Chat from "./componentes/Chat/Chat";
 import BusquedaCanciones from "./componentes/BusquedaCanciones/BusquedaCanciones";
+import PagInicial from "./componentes/PagInicial/PagInicial";
 function App() {
   const [ListaCancionesPrueba, setListaCancionesPrueba] = useState([
     {
@@ -55,7 +56,7 @@ function App() {
               <Switch className="header Main">
                 <Route exact path="/">
                   <RutaProtegida login={login}>
-                    <Principal />
+                    <PagInicial />
                   </RutaProtegida>
                 </Route>
 
@@ -64,8 +65,8 @@ function App() {
                 </Route>
 
                 <Route exact path="/perfil">
-                  <RutaProtegida login={login} >
-                    <Perfil login={login} setLogin={setLogin}/>
+                  <RutaProtegida login={login}>
+                    <Perfil login={login} setLogin={setLogin} />
                   </RutaProtegida>
                 </Route>
 
@@ -97,9 +98,7 @@ function App() {
                     cancionPuesta={cancionPuesta}
                   />
                 </Route>
-                <Route exact path="/">
-                  <Principal />
-                </Route>
+
                 <Route path="**">
                   <NotFoundPagina />
                 </Route>
