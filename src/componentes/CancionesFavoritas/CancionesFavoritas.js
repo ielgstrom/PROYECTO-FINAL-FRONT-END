@@ -20,8 +20,6 @@ export const CancionesFavoritas = ({
 
   const [listaMegustan, setListaMeGustan] = useState([]);
   const busquedaMegusta = useCallback(async () => {
-    console.log("he empezado a buscar");
-
     const token = localStorage.getItem("token");
     const decoded = jwt_decode(token);
     const id_persona = decoded.usuario._id;

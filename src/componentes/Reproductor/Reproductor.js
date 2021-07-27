@@ -105,7 +105,6 @@ export const Reproductor = ({
   };
   const nextSong = useCallback(
     (lista) => {
-      console.log(lista);
       setReproduccion({
         ...reproduccion,
         reproduciendo: true,
@@ -140,7 +139,7 @@ export const Reproductor = ({
 
   const previousSong = () => {
     console.log("previous");
-    debugger;
+
     if (ListaCancionesPrueba[0].url !== cancionPuesta.url) {
       setCancionPuesta(
         ListaCancionesPrueba[ListaCancionesPrueba.indexOf(cancionPuesta) - 1]
@@ -150,7 +149,6 @@ export const Reproductor = ({
     } else setCancionPuesta(cancionPuesta);
   };
   const unaSolaCancion = () => {
-    debugger;
     if (ListaCancionesPrueba.length !== 1) {
       return false;
     } else if (ListaCancionesPrueba.length === 1) {
@@ -223,7 +221,7 @@ export const Reproductor = ({
         liked={liked}
         likear={likear}
         nextSong={nextSong}
-        previousSong={previousSong}
+        // previousSong={previousSong}
         cancionPuesta={cancionPuesta}
         ListaCancionesPrueba={ListaCancionesPrueba}
         reproduciondo={reproduciendo}

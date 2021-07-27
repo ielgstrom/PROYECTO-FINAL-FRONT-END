@@ -8,8 +8,6 @@ export const HistorialSidebar = () => {
 
   const [listaHistorial, setListaHistorial] = useState([]);
   const busquedaHistorial = useCallback(async () => {
-    console.log("he empezado a buscar");
-
     if (!token) {
       console.log("No hay token");
       return;

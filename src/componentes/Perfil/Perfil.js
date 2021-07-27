@@ -70,7 +70,7 @@ export const Perfil = (props) => {
           <div className="contenedorGeneros col-12">
             <ul className="justify-content-between row">
               {usuario.generosPreferidos.map((genero) => (
-                <p className="generoCancion col-3">
+                <p key={genero.nombre} className="generoCancion col-3">
                   <strong>{genero.nombre}</strong>
                 </p>
               ))}
