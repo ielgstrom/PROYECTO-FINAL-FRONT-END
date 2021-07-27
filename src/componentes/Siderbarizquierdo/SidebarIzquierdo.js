@@ -83,7 +83,7 @@ export const SidebarIzquierdo = () => {
             <input
               type="text"
               className="form-control form-control-md buscadorMusica"
-              placeholder="Buscar Musica"
+              placeholder="Buscar Música"
               value={texto}
               onChange={ponerTexto}
               onKeyPress={ponerEnter}

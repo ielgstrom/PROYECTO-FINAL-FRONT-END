@@ -61,6 +61,7 @@
 .PlayLikesButton:hover {
   color: var(--azulprincipal);
   transform: scale(1.5, 1.5);
+  cursor: pointer;
 }
 
 .likesIzquierda {
