@@ -24,11 +24,12 @@ export const ListaAmigos = () => {
         },
       }
     );
+
     const datos = await resp.json();
     setAmigos(datos);
   }, [token]);
 
-  useEffect(listarAmigos, [listarAmigos, token, amigos]);
+  useEffect(listarAmigos, [listarAmigos]);
   return (
     <>
       {amigos.map((elemento) => (
