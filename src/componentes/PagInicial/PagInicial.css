@@ -1,0 +1,14 @@
+.TituloBienvenida {
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+}
+.iconoInicio {
+  align-items: center;
+  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 20%;
+}
